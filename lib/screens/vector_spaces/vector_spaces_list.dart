@@ -51,19 +51,19 @@ class _VectorSpacesListState extends State<VectorSpacesList> {
             crossAxisCount: 2,
             children: <Widget>[
               CardView(
-                  "Addition", 'lib/assets/images/vector_spaces/addition.png','vs'),
+                  "Addition", 'lib/assets/images/vector_spaces/addition.png','vector_addition'),
               CardView(
-                  "Subtraction", 'lib/assets/images/vector_spaces/subtraction.png','vs'),
+                  "Subtraction", 'lib/assets/images/vector_spaces/subtraction.png','vector_subtraction'),
               CardView(
-                  "Scalar Product", 'lib/assets/images/vector_spaces/scalar_product.png','vs'),
+                  "Scalar Product", 'lib/assets/images/vector_spaces/scalar_product.png','vector_scalar_product'),
               CardView(
-                  "Cross Product", 'lib/assets/images/vector_spaces/cross_product.png','vs'),
+                  "Cross Product", 'lib/assets/images/vector_spaces/cross_product.png','vector_cross_product'),
               CardView(
-                  "Angle", 'lib/assets/images/vector_spaces/angle.png','vs'),
+                  "Angle", 'lib/assets/images/vector_spaces/angle.png','angle'),
               CardView(
-                  "Projection", 'lib/assets/images/vector_spaces/projection.png','vs'),
+                  "Projection", 'lib/assets/images/vector_spaces/projection.png','projection'),
               CardView(
-                  "Orthogonal Vectors", 'lib/assets/images/vector_spaces/orthogonal_vectors.png','vs'),
+                  "Orthogonal Vectors", 'lib/assets/images/vector_spaces/orthogonal_vectors.png','orthogonal_vectors'),
             ],
           ),
         ),

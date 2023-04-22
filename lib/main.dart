@@ -17,7 +17,14 @@ import 'package:linear_algebra/screens/geometry/trapezoid.dart';
 import 'package:linear_algebra/screens/linear_system/linear_system_list.dart';
 import 'package:linear_algebra/screens/matrices/matrices_list.dart';
 import 'package:linear_algebra/screens/splash_screen.dart';
+import 'package:linear_algebra/screens/vector_spaces/angle/angle.dart';
+import 'package:linear_algebra/screens/vector_spaces/orthogonal_vectors/orthogonal_vectors.dart';
+import 'package:linear_algebra/screens/vector_spaces/projection/projection.dart';
+import 'package:linear_algebra/screens/vector_spaces/vector_addition/vector_addition.dart';
+import 'package:linear_algebra/screens/vector_spaces/vector_cross_product/vector_cross_product.dart';
+import 'package:linear_algebra/screens/vector_spaces/vector_scalar_product/vector_scalar_product.dart';
 import 'package:linear_algebra/screens/vector_spaces/vector_spaces_list.dart';
+import 'package:linear_algebra/screens/vector_spaces/vector_subtraction/vector_subtraction.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -62,6 +69,13 @@ class _MyAppState extends State<MyApp> {
         'rhombus': (context) => const Rhombus(),
         'parallelogram': (context) => const Parallelogram(),
         'trapezoid': (context) => const Trapeziod(),
+        'vector_addition': (context) => const VectorAddition(),
+        'vector_subtraction': (context) => const VectorSubtraction(),
+        'vector_scalar_product': (context) => const VectorScalarProduct(),
+        'vector_cross_product': (context) => const VectorCrossProduct(),
+        'angle': (context) => const Angle(),
+        'projection': (context) => const Projection(),
+        'orthogonal_vectors': (context) => const OrthogonalVectors(),
       },
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
