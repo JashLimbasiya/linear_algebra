@@ -204,10 +204,9 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            onPressed: ()
-                            {
+                            onPressed: () {
                               if (_formfield.currentState!.validate()) {
-                                Navigator.pushReplacement(context,
+                                Navigator.push(context,
                                     MaterialPageRoute(builder: (context) => const HomeScreen()));
                               }
                             },

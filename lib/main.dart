@@ -1,29 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:linear_algebra/screens/feedback.dart';
-import 'package:linear_algebra/screens/geometry/circle/circle.dart';
-import 'package:linear_algebra/screens/geometry/cone/cone.dart';
-import 'package:linear_algebra/screens/geometry/cube/cube.dart';
-import 'package:linear_algebra/screens/geometry/cylinder/cylinder.dart';
-import 'package:linear_algebra/screens/geometry/equilateral_triangle/equilateral_triangle.dart';
+import 'package:linear_algebra/screens/geometry/circle.dart';
+import 'package:linear_algebra/screens/geometry/cone.dart';
+import 'package:linear_algebra/screens/geometry/cube.dart';
+import 'package:linear_algebra/screens/geometry/cylinder.dart';
+import 'package:linear_algebra/screens/geometry/equilateral_triangle.dart';
 import 'package:linear_algebra/screens/geometry/geometry_list.dart';
-import 'package:linear_algebra/screens/geometry/isosceles_triangle/isosceles_triangle.dart';
-import 'package:linear_algebra/screens/geometry/parallelogram/parallelogram.dart';
-import 'package:linear_algebra/screens/geometry/rectangle/rectangle.dart';
-import 'package:linear_algebra/screens/geometry/rhombus/rhombus.dart';
-import 'package:linear_algebra/screens/geometry/sphere/sphere.dart';
-import 'package:linear_algebra/screens/geometry/square/square.dart';
-import 'package:linear_algebra/screens/geometry/trapezoid/trapezoid.dart';
-import 'package:linear_algebra/screens/linear_system/gaussian_elimination/gaussian_elimination.dart';
-import 'package:linear_algebra/screens/linear_system/gaussian_jorden/gaussian_jorden.dart';
+import 'package:linear_algebra/screens/geometry/isosceles_triangle.dart';
+import 'package:linear_algebra/screens/geometry/parallelogram.dart';
+import 'package:linear_algebra/screens/geometry/rectangle.dart';
+import 'package:linear_algebra/screens/geometry/rhombus.dart';
+import 'package:linear_algebra/screens/geometry/sphere.dart';
+import 'package:linear_algebra/screens/geometry/square.dart';
+import 'package:linear_algebra/screens/geometry/trapezoid.dart';
 import 'package:linear_algebra/screens/linear_system/linear_system_list.dart';
 import 'package:linear_algebra/screens/matrices/matrices_list.dart';
-import 'package:linear_algebra/screens/matrices/matrix_addition/matrix_addition.dart';
-import 'package:linear_algebra/screens/matrices/matrix_determinant/matrix_determinant.dart';
-import 'package:linear_algebra/screens/matrices/matrix_multiplication/matrix_multiplication.dart';
-import 'package:linear_algebra/screens/matrices/matrix_subtraction/matrix_subtraction.dart';
-import 'package:linear_algebra/screens/matrices/matrix_trace/matrix_trace.dart';
-import 'package:linear_algebra/screens/matrices/matrix_transpose/matrix_transpose.dart';
 import 'package:linear_algebra/screens/splash_screen.dart';
 import 'package:linear_algebra/screens/vector_spaces/vector_spaces_list.dart';
 
@@ -70,14 +62,6 @@ class _MyAppState extends State<MyApp> {
         'rhombus': (context) => const Rhombus(),
         'parallelogram': (context) => const Parallelogram(),
         'trapezoid': (context) => const Trapeziod(),
-        'gaussian_jorden': (context) => const GaussianJorden(),
-        'gaussian_elimination': (context) => const GaussianElimination(),
-        'matrix_determinant': (context) => const MatrixDeterminant(),
-        'matrix_trace': (context) => const MatrixTrace(),
-        'matrix_transpose': (context) => const MatrixTranspose(),
-        'matrix_multiplication': (context) => const MatrixMultiplication(),
-        'matrix_subtraction': (context) => const MatrixSubtraction(),
-        'matrix_addition': (context) => const MatrixAddition(),
       },
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
