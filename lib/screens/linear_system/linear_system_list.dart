@@ -50,9 +50,9 @@ class _LinearSystemListState extends State<LinearSystemList> {
             mainAxisSpacing: 10,
             crossAxisCount: 2,
             children: <Widget>[
-              CardView("Gaussian Jorden", 'lib/assets/images/linear_system/equation.png','ls'),
+              CardView("Gaussian Jorden", 'lib/assets/images/linear_system/equation.png','gaussian_jorden'),
               CardView(
-                  "Gaussian Elimination", 'lib/assets/images/linear_system/equation.png','ls'),
+                  "Gaussian Elimination", 'lib/assets/images/linear_system/equation.png','gaussian_elimination'),
             ],
           ),
         ),
