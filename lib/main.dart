@@ -14,8 +14,16 @@ import 'package:linear_algebra/screens/geometry/rhombus/rhombus.dart';
 import 'package:linear_algebra/screens/geometry/sphere/sphere.dart';
 import 'package:linear_algebra/screens/geometry/square/square.dart';
 import 'package:linear_algebra/screens/geometry/trapezoid/trapezoid.dart';
+import 'package:linear_algebra/screens/linear_system/gaussian_elimination/gaussian_elimination.dart';
+import 'package:linear_algebra/screens/linear_system/gaussian_jorden/gaussian_jorden.dart';
 import 'package:linear_algebra/screens/linear_system/linear_system_list.dart';
 import 'package:linear_algebra/screens/matrices/matrices_list.dart';
+import 'package:linear_algebra/screens/matrices/matrix_addition/matrix_addition.dart';
+import 'package:linear_algebra/screens/matrices/matrix_determinant/matrix_determinant.dart';
+import 'package:linear_algebra/screens/matrices/matrix_multiplication/matrix_multiplication.dart';
+import 'package:linear_algebra/screens/matrices/matrix_subtraction/matrix_subtraction.dart';
+import 'package:linear_algebra/screens/matrices/matrix_trace/matrix_trace.dart';
+import 'package:linear_algebra/screens/matrices/matrix_transpose/matrix_transpose.dart';
 import 'package:linear_algebra/screens/splash_screen.dart';
 import 'package:linear_algebra/screens/vector_spaces/angle/angle.dart';
 import 'package:linear_algebra/screens/vector_spaces/orthogonal_vectors/orthogonal_vectors.dart';
@@ -69,6 +77,14 @@ class _MyAppState extends State<MyApp> {
         'rhombus': (context) => const Rhombus(),
         'parallelogram': (context) => const Parallelogram(),
         'trapezoid': (context) => const Trapeziod(),
+        'gaussian_jorden': (context) => const GaussianJorden(),
+        'gaussian_elimination': (context) => const GaussianElimination(),
+        'matrix_determinant': (context) => const MatrixDeterminant(),
+        'matrix_trace': (context) => const MatrixTrace(),
+        'matrix_transpose': (context) => const MatrixTranspose(),
+        'matrix_multiplication': (context) => const MatrixMultiplication(),
+        'matrix_subtraction': (context) => const MatrixSubtraction(),
+        'matrix_addition': (context) => const MatrixAddition(),
         'vector_addition': (context) => const VectorAddition(),
         'vector_subtraction': (context) => const VectorSubtraction(),
         'vector_scalar_product': (context) => const VectorScalarProduct(),
