@@ -112,12 +112,12 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                         ),
                         textInputAction: TextInputAction.done,
                         validator: (String? value) {
-                          bool emailValid = RegExp(
+                          bool phoneValid = RegExp(
                               r"(^[0-9]{10}$)")
                               .hasMatch(value!);
                           if (value.isEmpty) {
                             return "Enter Phone Number";
-                          } else if (!emailValid) {
+                          } else if (!phoneValid) {
                             return "Enter Valid Phone Number";
                           }
                           return null;
