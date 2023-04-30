@@ -56,7 +56,6 @@ class _MyAppState extends State<MyApp> {
       title: 'Linear Algebra',
       theme: ThemeData(
         primarySwatch: Colors.red,
-
       ),
       routes: {
         '/splash_screen': (context) => const SplashScreen(),

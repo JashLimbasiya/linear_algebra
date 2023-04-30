@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class Cone extends StatefulWidget {
@@ -6,13 +8,13 @@ class Cone extends StatefulWidget {
   @override
   State<Cone> createState() => _ConeState();
 }
-double result = 0;
+
+TextEditingController coneradius = TextEditingController();
+TextEditingController coneheight = TextEditingController();
 
 class _ConeState extends State<Cone> {
   @override
   Widget build(BuildContext context) {
-    TextEditingController radius = TextEditingController();
-    TextEditingController height = TextEditingController();
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -47,15 +49,18 @@ class _ConeState extends State<Cone> {
             ),
           ),
           child: ListView(
-            padding: const EdgeInsets.all(10),
+            padding:
+                const EdgeInsets.only(top: 25, right: 10, bottom: 10, left: 10),
             children: [
               Card(
+                shadowColor: Colors.red,
+                elevation: 10,
                 child: Column(
                   children: [
                     const SizedBox(height: 10),
                     TextFormField(
                       keyboardType: TextInputType.number,
-                      controller: radius,
+                      controller: coneradius,
                       decoration: const InputDecoration(
                         hintText: 'Enter Radius ',
                         filled: true,
@@ -65,14 +70,14 @@ class _ConeState extends State<Cone> {
                     const SizedBox(height: 10),
                     TextFormField(
                       keyboardType: TextInputType.number,
-                      controller: height,
+                      controller: coneheight,
                       decoration: const InputDecoration(
                         hintText: 'Enter Height ',
                         filled: true,
                         fillColor: Colors.white,
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 25),
                     TextButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateColor.resolveWith(
@@ -98,27 +103,31 @@ class _ConeState extends State<Cone> {
                           ),
                         ),
                         onPressed: () {
+                          FocusManager.instance.primaryFocus?.unfocus();
                           setState(() {
-                            result = double.parse(radius.text) +
-                                double.parse(height.text);
+                            radius = double.parse(coneradius.text);
+                            height = double.parse(coneheight.text);
+                            slantheight =
+                                sqrt(((radius * radius) + (height * height)));
+                            surfacearea =
+                                (pi * radius * (radius + slantheight));
+                            volume = ((1 / 3) * pi * radius * radius * height);
+                            coneradius.clear();
+                            coneheight.clear();
                             _ConeState();
                           });
-                        }
-                        ),
-                    const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          "Sum : ",
-                          style: TextStyle(fontSize: 20),
-                        ),
-                        Text(
-                          '$result',
-                          style: const TextStyle(fontSize: 20),
-                        ),
-                      ],
+                        }),
+                    const SizedBox(height: 25),
+                    const Divider(
+                      color: Color.fromARGB(70, 200, 0, 0),
+                      thickness: 3,
                     ),
+                    const SizedBox(height: 10),
+                    ansRow("Radius (r) = ", radius),
+                    ansRow("Height (h) = ", height),
+                    ansRow("Slant Height (l) = ", slantheight),
+                    ansRow("Surface Area (A) = ", surfacearea),
+                    ansRow("Volume (V) = ", volume),
                     const SizedBox(height: 20),
                   ],
                 ),
@@ -129,5 +138,27 @@ class _ConeState extends State<Cone> {
       ),
     );
   }
-  double result = 0;
+
+  ansRow(String str, double ans) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        const SizedBox(width: 15, height: 28),
+        Text(
+          str,
+          style: const TextStyle(fontSize: 20),
+        ),
+        Text(
+          ans.toStringAsFixed(2),
+          style: const TextStyle(fontSize: 20),
+        )
+      ],
+    );
+  }
+
+  double radius = 0;
+  double height = 0;
+  double slantheight = 0;
+  double surfacearea = 0;
+  double volume = 0;
 }
