@@ -105,6 +105,8 @@ class _EquilateralTriangleState extends State<EquilateralTriangle> {
                     const Divider(
                       color: Color.fromARGB(70, 200, 0, 0),
                       thickness: 3,
+                      indent: 5,
+                      endIndent: 5,
                     ),
                     const SizedBox(height: 10),
                     ansRow("Side = ", side),

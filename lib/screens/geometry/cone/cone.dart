@@ -121,6 +121,8 @@ class _ConeState extends State<Cone> {
                     const Divider(
                       color: Color.fromARGB(70, 200, 0, 0),
                       thickness: 3,
+                      indent: 5,
+                      endIndent: 5,
                     ),
                     const SizedBox(height: 10),
                     ansRow("Radius (r) = ", radius),
