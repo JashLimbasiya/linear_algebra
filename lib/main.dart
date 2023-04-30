@@ -4,6 +4,7 @@ import 'package:linear_algebra/screens/feedback.dart';
 import 'package:linear_algebra/screens/geometry/circle/circle.dart';
 import 'package:linear_algebra/screens/geometry/cone/cone.dart';
 import 'package:linear_algebra/screens/geometry/cube/cube.dart';
+import 'package:linear_algebra/screens/geometry/cuboid/cuboid.dart';
 import 'package:linear_algebra/screens/geometry/cylinder/cylinder.dart';
 import 'package:linear_algebra/screens/geometry/equilateral_triangle/equilateral_triangle.dart';
 import 'package:linear_algebra/screens/geometry/geometry_list.dart';
@@ -73,6 +74,7 @@ class _MyAppState extends State<MyApp> {
         'square': (context) => const Square(),
         'cube': (context) => const Cube(),
         'rectangle': (context) => const Rectangle(),
+        'cuboid': (context) => const Cuboid(),
         'rhombus': (context) => const Rhombus(),
         'parallelogram': (context) => const Parallelogram(),
         'trapezoid': (context) => const Trapeziod(),

@@ -61,10 +61,12 @@ class _GeometryListState extends State<GeometryList> {
               CardView("Square", 'lib/assets/images/geometry/square.png','square'),
               CardView("Cube", 'lib/assets/images/geometry/cube.png','cube'),
               CardView("Rectangle", 'lib/assets/images/geometry/rectangle.png','rectangle'),
+              CardView("Cuboid", 'lib/assets/images/geometry/cuboid.png', 'cuboid'),
               CardView("Rhombus", 'lib/assets/images/geometry/rhombus.png','rhombus'),
               CardView("Parallelogram", 'lib/assets/images/geometry/parallelogram.png','parallelogram'),
               CardView("Trapezoid", 'lib/assets/images/geometry/trapezoid.png','trapezoid'),
             ],
+
           ),
         ),
       ),

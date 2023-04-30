@@ -2,16 +2,18 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class Sphere extends StatefulWidget {
-  const Sphere({super.key});
+class Cuboid extends StatefulWidget {
+  const Cuboid({super.key});
 
   @override
-  State<Sphere> createState() => _SphereState();
+  State<Cuboid> createState() => _CuboidState();
 }
 
-TextEditingController circleradius = TextEditingController();
+TextEditingController cuboidlength = TextEditingController();
+TextEditingController cuboidwidth = TextEditingController();
+TextEditingController cuboidheight = TextEditingController();
 
-class _SphereState extends State<Sphere> {
+class _CuboidState extends State<Cuboid> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -30,7 +32,7 @@ class _SphereState extends State<Sphere> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: const [
               Text(
-                "Sphere",
+                "Cuboid",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 28,
@@ -49,7 +51,7 @@ class _SphereState extends State<Sphere> {
           ),
           child: ListView(
             padding:
-            const EdgeInsets.only(top: 25, right: 10, bottom: 10, left: 10),
+                const EdgeInsets.only(top: 25, right: 10, bottom: 10, left: 10),
             children: [
               Card(
                 shadowColor: Colors.red,
@@ -59,9 +61,29 @@ class _SphereState extends State<Sphere> {
                     const SizedBox(height: 10),
                     TextFormField(
                       keyboardType: TextInputType.number,
-                      controller: circleradius,
+                      controller: cuboidlength,
                       decoration: const InputDecoration(
-                        hintText: 'Enter Radius ',
+                        hintText: 'Enter Length ',
+                        filled: true,
+                        fillColor: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    TextFormField(
+                      keyboardType: TextInputType.number,
+                      controller: cuboidwidth,
+                      decoration: const InputDecoration(
+                        hintText: 'Enter Width ',
+                        filled: true,
+                        fillColor: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    TextFormField(
+                      keyboardType: TextInputType.number,
+                      controller: cuboidheight,
+                      decoration: const InputDecoration(
+                        hintText: 'Enter Height ',
                         filled: true,
                         fillColor: Colors.white,
                       ),
@@ -70,17 +92,17 @@ class _SphereState extends State<Sphere> {
                     TextButton(
                         style: ButtonStyle(
                           backgroundColor: MaterialStateColor.resolveWith(
-                                  (states) => Colors.white),
+                              (states) => Colors.white),
                           padding: const MaterialStatePropertyAll(
                               EdgeInsets.all(10)),
                           shadowColor: MaterialStateColor.resolveWith(
-                                  (states) => Colors.red),
+                              (states) => Colors.red),
                           elevation: const MaterialStatePropertyAll(5),
                           shape: const MaterialStatePropertyAll(
                             RoundedRectangleBorder(
                                 side: BorderSide(color: Colors.red, width: 2),
                                 borderRadius:
-                                BorderRadius.all(Radius.circular(8))),
+                                    BorderRadius.all(Radius.circular(8))),
                           ),
                         ),
                         child: const Text(
@@ -94,11 +116,24 @@ class _SphereState extends State<Sphere> {
                         onPressed: () {
                           FocusManager.instance.primaryFocus?.unfocus();
                           setState(() {
-                            radius = double.parse(circleradius.text);
-                            surfacearea = (4*pi*radius*radius);
-                            volume = (4*pi*radius*radius*radius/3);
-                            circleradius.clear();
-                            _SphereState();
+                            length = double.parse(cuboidlength.text);
+                            width = double.parse(cuboidwidth.text);
+                            height = double.parse(cuboidheight.text);
+                            volume = (length * width * height);
+                            lateralsurfacearea =
+                                (2 * height * (length + width));
+                            totalsurfacearea = (2 *
+                                ((length * width) +
+                                    (width * height) +
+                                    (height * length)));
+                            perimeter = (4 * (length + width + height));
+                            diagonal = sqrt((length * length) +
+                                (width * width) +
+                                (height * height));
+                            cuboidlength.clear();
+                            cuboidwidth.clear();
+                            cuboidheight.clear();
+                            _CuboidState();
                           });
                         }),
                     const SizedBox(height: 25),
@@ -109,13 +144,17 @@ class _SphereState extends State<Sphere> {
                       endIndent: 5,
                     ),
                     const SizedBox(height: 10),
-                    ansRow("Radius (r) = ", radius),
-                    ansRow("Surface Area = ", surfacearea),
-                    ansRow("Volume (V) = ", volume),
+                    ansRow("Length (l) = ", length),
+                    ansRow("Width (b) = ", width),
+                    ansRow("Height (h) = ", height),
+                    ansRow("Volume = ", volume),
+                    ansRow("Lateral Surface Area = ", lateralsurfacearea),
+                    ansRow("Total Surface Area = ", totalsurfacearea),
+                    ansRow("Perimeter = ", perimeter),
+                    ansRow("Diagonal = ", diagonal),
                     const SizedBox(height: 20),
                   ],
                 ),
-
               )
             ],
           ),
@@ -141,7 +180,12 @@ class _SphereState extends State<Sphere> {
     );
   }
 
-  double radius = 0;
-  double surfacearea = 0;
+  double length = 0;
+  double width = 0;
+  double height = 0;
+  double lateralsurfacearea = 0;
+  double totalsurfacearea = 0;
+  double perimeter = 0;
+  double diagonal = 0;
   double volume = 0;
 }
