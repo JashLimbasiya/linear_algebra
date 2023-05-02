@@ -1,25 +1,24 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:linear_algebra/main.dart';
 import 'package:linear_algebra/screens/home_screen.dart';
 
-
-class SplashScreen extends StatefulWidget{
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
-
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     super.initState();
 
-    Timer(const Duration(seconds: 2), (){
-      Navigator.pushReplacement(context,
+    Timer(const Duration(seconds: 2), () {
+      Navigator.pushReplacement(
+          context,
           MaterialPageRoute(
             builder: (context) => const HomeScreen(),
           ));
@@ -31,12 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('lib/assets/images/background.png'),
-              fit: BoxFit.cover,
-            ),
-          ),
+          decoration: background(),
           child: Center(
             child: SizedBox(
                 width: 350,

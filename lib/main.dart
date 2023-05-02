@@ -14,9 +14,10 @@ import 'package:linear_algebra/screens/geometry/rectangle/rectangle.dart';
 import 'package:linear_algebra/screens/geometry/rhombus/rhombus.dart';
 import 'package:linear_algebra/screens/geometry/sphere/sphere.dart';
 import 'package:linear_algebra/screens/geometry/square/square.dart';
-import 'package:linear_algebra/screens/linear_system/gaussian_elimination/gaussian_elimination.dart';
-import 'package:linear_algebra/screens/linear_system/gaussian_jorden/gaussian_jorden.dart';
 import 'package:linear_algebra/screens/linear_system/linear_system_list.dart';
+import 'package:linear_algebra/screens/linear_system/one_variable/one_variable.dart';
+import 'package:linear_algebra/screens/linear_system/three_variable/three_variable.dart';
+import 'package:linear_algebra/screens/linear_system/two_variable/two_variable.dart';
 import 'package:linear_algebra/screens/matrices/matrices_list.dart';
 import 'package:linear_algebra/screens/matrices/matrix_addition/matrix_addition.dart';
 import 'package:linear_algebra/screens/matrices/matrix_determinant/matrix_determinant.dart';
@@ -76,8 +77,9 @@ class _MyAppState extends State<MyApp> {
         'cuboid': (context) => const Cuboid(),
         'rhombus': (context) => const Rhombus(),
         'parallelogram': (context) => const Parallelogram(),
-        'gaussian_jorden': (context) => const GaussianJorden(),
-        'gaussian_elimination': (context) => const GaussianElimination(),
+        'one_variable': (context) => const OneVariable(),
+        'two_variable': (context) => const TwoVariable(),
+        'three_variable': (context) => const ThreeVariable(),
         'matrix_determinant': (context) => const MatrixDeterminant(),
         'matrix_trace': (context) => const MatrixTrace(),
         'matrix_transpose': (context) => const MatrixTranspose(),
@@ -96,6 +98,41 @@ class _MyAppState extends State<MyApp> {
       home: const SplashScreen(),
     );
   }
+}
+
+appbar(String str) {
+  return AppBar(
+    toolbarHeight: 75,
+    shadowColor: Colors.red,
+    backgroundColor: Colors.red,
+    elevation: 10,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
+    ),
+    title: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Text(
+          str,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 28,
+            fontStyle: FontStyle.italic,
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+background() {
+  return const BoxDecoration(
+    image: DecorationImage(
+      image: AssetImage('lib/assets/images/background.png'),
+      fit: BoxFit.cover,
+    ),
+  );
 }
 
 ansRow(String str, double ans) {
@@ -118,8 +155,7 @@ ansRow(String str, double ans) {
 textbutton(String str, Function onpressed) {
   return TextButton(
     style: ButtonStyle(
-      backgroundColor:
-      MaterialStateColor.resolveWith((states) => Colors.white),
+      backgroundColor: MaterialStateColor.resolveWith((states) => Colors.white),
       padding: const MaterialStatePropertyAll(EdgeInsets.all(10)),
       shadowColor: MaterialStateColor.resolveWith((states) => Colors.red),
       elevation: const MaterialStatePropertyAll(5),
@@ -129,7 +165,7 @@ textbutton(String str, Function onpressed) {
             borderRadius: BorderRadius.all(Radius.circular(8))),
       ),
     ),
-    onPressed: (){
+    onPressed: () {
       FocusManager.instance.primaryFocus?.unfocus();
       onpressed();
     },
@@ -140,6 +176,35 @@ textbutton(String str, Function onpressed) {
         color: Colors.red,
         fontWeight: FontWeight.bold,
       ),
+    ),
+  );
+}
+
+Card cardView(String str, String ico, Function ontap) {
+  return Card(
+    color: Colors.white,
+    shadowColor: Colors.red,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10),
+    ),
+    elevation: 20,
+    margin: const EdgeInsets.all(10),
+    child: ListTile(
+      title: Column(
+        children: [
+          const SizedBox(height: 20),
+          SizedBox(width: 100, height: 100, child: Image.asset(ico)),
+          const SizedBox(height: 10),
+          Text(str,
+              style: const TextStyle(
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15)),
+        ],
+      ),
+      onTap: () {
+        ontap();
+      },
     ),
   );
 }

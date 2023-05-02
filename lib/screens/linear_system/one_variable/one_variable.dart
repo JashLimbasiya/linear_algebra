@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:linear_algebra/main.dart';
 
-class VectorSubtraction extends StatefulWidget {
-  const VectorSubtraction({super.key});
+class OneVariable extends StatefulWidget {
+  const OneVariable({super.key});
 
   @override
-  State<VectorSubtraction> createState() => _VectorSubtractionState();
+  State<OneVariable> createState() => _OneVariableState();
 }
 
-class _VectorSubtractionState extends State<VectorSubtraction> {
+class _OneVariableState extends State<OneVariable> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: appbar("Vector Subtraction"),
+        appBar: appbar("One Variable"),
         body: Container(
           decoration: background(),
           child: const Center(
-              child: Text("Vector Subtraction",
+              child: Text("One Variable",
                   style: TextStyle(fontSize: 50, color: Colors.red))),
         ),
       ),

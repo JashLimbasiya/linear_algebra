@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:linear_algebra/main.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -87,12 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             body: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('lib/assets/images/background.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
+              decoration: background(),
               child: GridView.count(
                 padding: const EdgeInsets.only(
                     left: 10, top: 20, right: 10, bottom: 10),
@@ -100,18 +96,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSpacing: 10,
                 crossAxisCount: 2,
                 children: <Widget>[
-                  cardView("Geometry",
-                      'lib/assets/images/geometry/geometry.png', 'g'),
                   cardView(
-                      "Linear Systems",
+                      "Geometry", 'lib/assets/images/geometry/geometry.png',
+                      () {
+                    Navigator.pushNamed(context, 'g');
+                  }),
+                  cardView("Linear Systems",
                       'lib/assets/images/linear_system/linear_equation.png',
-                      'ls'),
-                  cardView("Matrices",
-                      'lib/assets/images/matrices/matrices.png', 'm'),
+                      () {
+                    Navigator.pushNamed(context, 'ls');
+                  }),
                   cardView(
-                      "Vector Spaces",
-                      'lib/assets/images/vector_spaces/vector_spaces.png',
-                      'vs'),
+                      "Matrices", 'lib/assets/images/matrices/matrices.png',
+                      () {
+                    Navigator.pushNamed(context, 'm');
+                  }),
+                  cardView("Vector Spaces",
+                      'lib/assets/images/vector_spaces/vector_spaces.png', () {
+                    Navigator.pushNamed(context, 'vs');
+                  }),
                 ],
               ),
             )),
@@ -149,42 +152,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return PopupMenuItem(
       value: val,
       child: Text(str),
-    );
-  }
-
-  Card cardView(String str, String ico, String page) {
-    return Card(
-      color: Colors.white,
-      shadowColor: Colors.red,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      elevation: 20,
-      margin: const EdgeInsets.all(10),
-      child: ListTile(
-        title: Center(
-          child: Wrap(
-            children: [
-              Container(
-                  alignment: Alignment.center,
-                  child: SizedBox(
-                      width: 100, height: 100, child: Image.asset(ico))),
-              Container(
-                alignment: Alignment.center,
-                child: Text(str,
-                    style: const TextStyle(
-                        color: Colors.red,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18)),
-              ),
-              const SizedBox(height: 35),
-            ],
-          ),
-        ),
-        onTap: () {
-          Navigator.pushNamed(context, page.toString());
-        },
-      ),
     );
   }
 }

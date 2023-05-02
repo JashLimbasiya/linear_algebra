@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:linear_algebra/main.dart';
 import 'package:linear_algebra/screens/home_screen.dart';
 
-class FeedbackScreen extends StatefulWidget{
+class FeedbackScreen extends StatefulWidget {
   const FeedbackScreen({super.key});
 
   @override
@@ -19,37 +20,9 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 75,
-          shadowColor: Colors.red,
-          backgroundColor: Colors.red,
-          elevation: 10,
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(10),
-                bottomRight: Radius.circular(10)),
-          ),
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: const [
-              Text(
-                "Feedback",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 28,
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
-            ],
-          ),
-        ),
+        appBar: appbar("Feedback"),
         body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('lib/assets/images/background.png'),
-              fit: BoxFit.cover,
-            ),
-          ),
+          decoration: background(),
           child: SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -112,9 +85,8 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                         ),
                         textInputAction: TextInputAction.done,
                         validator: (String? value) {
-                          bool phoneValid = RegExp(
-                              r"(^[0-9]{10}$)")
-                              .hasMatch(value!);
+                          bool phoneValid =
+                              RegExp(r"(^[0-9]{10}$)").hasMatch(value!);
                           if (value.isEmpty) {
                             return "Enter Phone Number";
                           } else if (!phoneValid) {
@@ -143,8 +115,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                         ),
                         textInputAction: TextInputAction.done,
                         validator: (String? value) {
-                          bool emailValid = RegExp(
-                              r"""
+                          bool emailValid = RegExp(r"""
 ^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+""")
                               .hasMatch(value!);
                           if (value.isEmpty) {
@@ -187,51 +158,20 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Card(
-                          color: Colors.red,
-                          shadowColor: Colors.black,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          elevation: 10,
-                          margin: const EdgeInsets.all(10),
-                          child: TextButton(
-                            child: const Text(
-                              'Send',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            onPressed: () {
-                              if (_formfield.currentState!.validate()) {
-                                Navigator.pushReplacement(context,
-                                    MaterialPageRoute(builder: (context) => const HomeScreen()));
-                              }
-                            },
-                          ),
+                        textbutton(
+                          "Send",
+                          () {
+                            if (_formfield.currentState!.validate()) {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const HomeScreen()));
+                            }
+                          },
                         ),
-                        Card(
-                          color: Colors.red,
-                          shadowColor: Colors.black,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          elevation: 10,
-                          margin: const EdgeInsets.all(10),
-                          child: TextButton(
-                            child: const Text(
-                              'Cancel',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            onPressed: () => Navigator.pop(context),
-                          ),
-                        ),
+                        const SizedBox(width: 20),
+                        textbutton("Cancel", () => Navigator.pop(context)),
                       ],
                     ),
                     const SizedBox(height: 80),
