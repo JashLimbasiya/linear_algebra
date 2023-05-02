@@ -51,12 +51,16 @@ class _LinearSystemListState extends State<LinearSystemList> {
             crossAxisCount: 2,
             children: <Widget>[
               cardView(
-                  "Gaussian Jorden",
-                  'lib/assets/images/linear_system/equation.png',
+                  "One Variable",
+                  'lib/assets/images/linear_system/x.png',
                   'gaussian_jorden'),
               cardView(
-                  "Gaussian Elimination",
-                  'lib/assets/images/linear_system/equation.png',
+                  "Two Variable",
+                  'lib/assets/images/linear_system/xy.png',
+                  'gaussian_elimination'),
+              cardView(
+                  "Three Variable",
+                  'lib/assets/images/linear_system/xyz.png',
                   'gaussian_elimination'),
             ],
           ),
@@ -88,7 +92,7 @@ class _LinearSystemListState extends State<LinearSystemList> {
                     style: const TextStyle(
                         color: Colors.red,
                         fontWeight: FontWeight.bold,
-                        fontSize: 14)),
+                        fontSize: 15)),
               ),
               const SizedBox(height: 35),
             ],
