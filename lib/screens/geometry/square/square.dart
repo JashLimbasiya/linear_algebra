@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:linear_algebra/main.dart';
 
 class Square extends StatefulWidget {
   const Square({super.key});
@@ -49,7 +50,7 @@ class _SquareState extends State<Square> {
           ),
           child: ListView(
             padding:
-            const EdgeInsets.only(top: 25, right: 10, bottom: 10, left: 10),
+                const EdgeInsets.only(top: 25, right: 10, bottom: 10, left: 10),
             children: [
               Card(
                 shadowColor: Colors.red,
@@ -67,41 +68,16 @@ class _SquareState extends State<Square> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    TextButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateColor.resolveWith(
-                                  (states) => Colors.white),
-                          padding: const MaterialStatePropertyAll(
-                              EdgeInsets.all(10)),
-                          shadowColor: MaterialStateColor.resolveWith(
-                                  (states) => Colors.red),
-                          elevation: const MaterialStatePropertyAll(5),
-                          shape: const MaterialStatePropertyAll(
-                            RoundedRectangleBorder(
-                                side: BorderSide(color: Colors.red, width: 2),
-                                borderRadius:
-                                BorderRadius.all(Radius.circular(8))),
-                          ),
-                        ),
-                        child: const Text(
-                          'Calculate',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.red,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        onPressed: () {
-                          FocusManager.instance.primaryFocus?.unfocus();
-                          setState(() {
-                            length = double.parse(squarelength.text);
-                            diagonal = sqrt(2*(length*length));
-                            perimeter = (4*length);
-                            area = (length*length);
-                            squarelength.clear();
-                            _SquareState();
-                          });
-                        }),
+                    textbutton('Calculate', () {
+                      setState(() {
+                        length = double.parse(squarelength.text);
+                        diagonal = sqrt(2 * (length * length));
+                        perimeter = (4 * length);
+                        area = (length * length);
+                        squarelength.clear();
+                        _SquareState();
+                      });
+                    }),
                     const SizedBox(height: 25),
                     const Divider(
                       color: Color.fromARGB(70, 200, 0, 0),
@@ -122,23 +98,6 @@ class _SquareState extends State<Square> {
           ),
         ),
       ),
-    );
-  }
-
-  ansRow(String str, double ans) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        const SizedBox(width: 15, height: 28),
-        Text(
-          str,
-          style: const TextStyle(fontSize: 20),
-        ),
-        Text(
-          ans.toStringAsFixed(2),
-          style: const TextStyle(fontSize: 20),
-        )
-      ],
     );
   }
 

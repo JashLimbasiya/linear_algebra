@@ -100,15 +100,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSpacing: 10,
                 crossAxisCount: 2,
                 children: <Widget>[
-                  CardView("Geometry",
+                  cardView("Geometry",
                       'lib/assets/images/geometry/geometry.png', 'g'),
-                  CardView(
+                  cardView(
                       "Linear Systems",
                       'lib/assets/images/linear_system/linear_equation.png',
                       'ls'),
-                  CardView("Matrices",
+                  cardView("Matrices",
                       'lib/assets/images/matrices/matrices.png', 'm'),
-                  CardView(
+                  cardView(
                       "Vector Spaces",
                       'lib/assets/images/vector_spaces/vector_spaces.png',
                       'vs'),
@@ -152,8 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // ignore: non_constant_identifier_names
-  Card CardView(String str, String ico, String page) {
+  Card cardView(String str, String ico, String page) {
     return Card(
       color: Colors.white,
       shadowColor: Colors.red,

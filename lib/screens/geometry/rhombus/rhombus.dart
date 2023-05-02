@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:linear_algebra/main.dart';
 
 class Rhombus extends StatefulWidget {
   const Rhombus({super.key});
@@ -50,7 +51,7 @@ class _RhombusState extends State<Rhombus> {
           ),
           child: ListView(
             padding:
-            const EdgeInsets.only(top: 25, right: 10, bottom: 10, left: 10),
+                const EdgeInsets.only(top: 25, right: 10, bottom: 10, left: 10),
             children: [
               Card(
                 shadowColor: Colors.red,
@@ -78,43 +79,20 @@ class _RhombusState extends State<Rhombus> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    TextButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateColor.resolveWith(
-                                  (states) => Colors.white),
-                          padding: const MaterialStatePropertyAll(
-                              EdgeInsets.all(10)),
-                          shadowColor: MaterialStateColor.resolveWith(
-                                  (states) => Colors.red),
-                          elevation: const MaterialStatePropertyAll(5),
-                          shape: const MaterialStatePropertyAll(
-                            RoundedRectangleBorder(
-                                side: BorderSide(color: Colors.red, width: 2),
-                                borderRadius:
-                                BorderRadius.all(Radius.circular(8))),
-                          ),
-                        ),
-                        child: const Text(
-                          'Calculate',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.red,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        onPressed: () {
-                          FocusManager.instance.primaryFocus?.unfocus();
-                          setState(() {
-                            diagonalone = double.parse(rhombusdiagonalone.text);
-                            diagonaltwo = double.parse(rhombusdiagonaltwo.text);
-                            length = ((sqrt((diagonalone*diagonalone)+(diagonaltwo*diagonaltwo)))/2);
-                            perimeter = (4*length);
-                            area = (diagonalone*diagonaltwo/2);
-                            rhombusdiagonalone.clear();
-                            rhombusdiagonaltwo.clear();
-                            _RhombusState();
-                          });
-                        }),
+                    textbutton('Calculate', () {
+                      setState(() {
+                        diagonalone = double.parse(rhombusdiagonalone.text);
+                        diagonaltwo = double.parse(rhombusdiagonaltwo.text);
+                        length = ((sqrt((diagonalone * diagonalone) +
+                                (diagonaltwo * diagonaltwo))) /
+                            2);
+                        perimeter = (4 * length);
+                        area = (diagonalone * diagonaltwo / 2);
+                        rhombusdiagonalone.clear();
+                        rhombusdiagonaltwo.clear();
+                        _RhombusState();
+                      });
+                    }),
                     const SizedBox(height: 25),
                     const Divider(
                       color: Color.fromARGB(70, 200, 0, 0),
@@ -136,23 +114,6 @@ class _RhombusState extends State<Rhombus> {
           ),
         ),
       ),
-    );
-  }
-
-  ansRow(String str, double ans) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        const SizedBox(width: 15, height: 28),
-        Text(
-          str,
-          style: const TextStyle(fontSize: 20),
-        ),
-        Text(
-          ans.toStringAsFixed(2),
-          style: const TextStyle(fontSize: 20),
-        )
-      ],
     );
   }
 

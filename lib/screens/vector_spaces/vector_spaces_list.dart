@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class VectorSpacesList extends StatefulWidget{
+class VectorSpacesList extends StatefulWidget {
   const VectorSpacesList({super.key});
 
   @override
@@ -44,26 +44,38 @@ class _VectorSpacesListState extends State<VectorSpacesList> {
             ),
           ),
           child: GridView.count(
-            padding: const EdgeInsets.only(
-                left: 10, top: 20, right: 10, bottom: 10),
+            padding:
+                const EdgeInsets.only(left: 10, top: 20, right: 10, bottom: 10),
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
             crossAxisCount: 2,
             children: <Widget>[
-              CardView(
-                  "Addition", 'lib/assets/images/vector_spaces/addition.png','vector_addition'),
-              CardView(
-                  "Subtraction", 'lib/assets/images/vector_spaces/subtraction.png','vector_subtraction'),
-              CardView(
-                  "Scalar Product", 'lib/assets/images/vector_spaces/scalar_product.png','vector_scalar_product'),
-              CardView(
-                  "Cross Product", 'lib/assets/images/vector_spaces/cross_product.png','vector_cross_product'),
-              CardView(
-                  "Angle", 'lib/assets/images/vector_spaces/angle.png','angle'),
-              CardView(
-                  "Projection", 'lib/assets/images/vector_spaces/projection.png','projection'),
-              CardView(
-                  "Orthogonal Vectors", 'lib/assets/images/vector_spaces/orthogonal_vectors.png','orthogonal_vectors'),
+              cardView(
+                  "Addition",
+                  'lib/assets/images/vector_spaces/addition.png',
+                  'vector_addition'),
+              cardView(
+                  "Subtraction",
+                  'lib/assets/images/vector_spaces/subtraction.png',
+                  'vector_subtraction'),
+              cardView(
+                  "Scalar Product",
+                  'lib/assets/images/vector_spaces/scalar_product.png',
+                  'vector_scalar_product'),
+              cardView(
+                  "Cross Product",
+                  'lib/assets/images/vector_spaces/cross_product.png',
+                  'vector_cross_product'),
+              cardView("Angle", 'lib/assets/images/vector_spaces/angle.png',
+                  'angle'),
+              cardView(
+                  "Projection",
+                  'lib/assets/images/vector_spaces/projection.png',
+                  'projection'),
+              cardView(
+                  "Orthogonal Vectors",
+                  'lib/assets/images/vector_spaces/orthogonal_vectors.png',
+                  'orthogonal_vectors'),
             ],
           ),
         ),
@@ -71,8 +83,7 @@ class _VectorSpacesListState extends State<VectorSpacesList> {
     );
   }
 
-  // ignore: non_constant_identifier_names
-  Card CardView(String str, String ico, String page) {
+  Card cardView(String str, String ico, String page) {
     return Card(
       color: Colors.white,
       shadowColor: Colors.red,

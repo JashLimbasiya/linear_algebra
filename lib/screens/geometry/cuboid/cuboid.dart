@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:linear_algebra/main.dart';
 
 class Cuboid extends StatefulWidget {
   const Cuboid({super.key});
@@ -89,53 +90,27 @@ class _CuboidState extends State<Cuboid> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    TextButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateColor.resolveWith(
-                              (states) => Colors.white),
-                          padding: const MaterialStatePropertyAll(
-                              EdgeInsets.all(10)),
-                          shadowColor: MaterialStateColor.resolveWith(
-                              (states) => Colors.red),
-                          elevation: const MaterialStatePropertyAll(5),
-                          shape: const MaterialStatePropertyAll(
-                            RoundedRectangleBorder(
-                                side: BorderSide(color: Colors.red, width: 2),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8))),
-                          ),
-                        ),
-                        child: const Text(
-                          'Calculate',
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.red,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        onPressed: () {
-                          FocusManager.instance.primaryFocus?.unfocus();
-                          setState(() {
-                            length = double.parse(cuboidlength.text);
-                            width = double.parse(cuboidwidth.text);
-                            height = double.parse(cuboidheight.text);
-                            volume = (length * width * height);
-                            lateralsurfacearea =
-                                (2 * height * (length + width));
-                            totalsurfacearea = (2 *
-                                ((length * width) +
-                                    (width * height) +
-                                    (height * length)));
-                            perimeter = (4 * (length + width + height));
-                            diagonal = sqrt((length * length) +
-                                (width * width) +
-                                (height * height));
-                            cuboidlength.clear();
-                            cuboidwidth.clear();
-                            cuboidheight.clear();
-                            _CuboidState();
-                          });
-                        }),
+                    textbutton('Calculate', () {
+                      setState(() {
+                        length = double.parse(cuboidlength.text);
+                        width = double.parse(cuboidwidth.text);
+                        height = double.parse(cuboidheight.text);
+                        volume = (length * width * height);
+                        lateralsurfacearea = (2 * height * (length + width));
+                        totalsurfacearea = (2 *
+                            ((length * width) +
+                                (width * height) +
+                                (height * length)));
+                        perimeter = (4 * (length + width + height));
+                        diagonal = sqrt((length * length) +
+                            (width * width) +
+                            (height * height));
+                        cuboidlength.clear();
+                        cuboidwidth.clear();
+                        cuboidheight.clear();
+                        _CuboidState();
+                      });
+                    }),
                     const SizedBox(height: 25),
                     const Divider(
                       color: Color.fromARGB(70, 200, 0, 0),
@@ -160,23 +135,6 @@ class _CuboidState extends State<Cuboid> {
           ),
         ),
       ),
-    );
-  }
-
-  ansRow(String str, double ans) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        const SizedBox(width: 15, height: 28),
-        Text(
-          str,
-          style: const TextStyle(fontSize: 20),
-        ),
-        Text(
-          ans.toStringAsFixed(2),
-          style: const TextStyle(fontSize: 20),
-        )
-      ],
     );
   }
 

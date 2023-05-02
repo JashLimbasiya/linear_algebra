@@ -14,7 +14,6 @@ import 'package:linear_algebra/screens/geometry/rectangle/rectangle.dart';
 import 'package:linear_algebra/screens/geometry/rhombus/rhombus.dart';
 import 'package:linear_algebra/screens/geometry/sphere/sphere.dart';
 import 'package:linear_algebra/screens/geometry/square/square.dart';
-import 'package:linear_algebra/screens/geometry/trapezoid/trapezoid.dart';
 import 'package:linear_algebra/screens/linear_system/gaussian_elimination/gaussian_elimination.dart';
 import 'package:linear_algebra/screens/linear_system/gaussian_jorden/gaussian_jorden.dart';
 import 'package:linear_algebra/screens/linear_system/linear_system_list.dart';
@@ -77,7 +76,6 @@ class _MyAppState extends State<MyApp> {
         'cuboid': (context) => const Cuboid(),
         'rhombus': (context) => const Rhombus(),
         'parallelogram': (context) => const Parallelogram(),
-        'trapezoid': (context) => const Trapeziod(),
         'gaussian_jorden': (context) => const GaussianJorden(),
         'gaussian_elimination': (context) => const GaussianElimination(),
         'matrix_determinant': (context) => const MatrixDeterminant(),
@@ -98,4 +96,50 @@ class _MyAppState extends State<MyApp> {
       home: const SplashScreen(),
     );
   }
+}
+
+ansRow(String str, double ans) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.start,
+    children: [
+      const SizedBox(width: 15, height: 28),
+      Text(
+        str,
+        style: const TextStyle(fontSize: 20),
+      ),
+      Text(
+        ans.toStringAsFixed(2),
+        style: const TextStyle(fontSize: 20),
+      )
+    ],
+  );
+}
+
+textbutton(String str, Function onpressed) {
+  return TextButton(
+    style: ButtonStyle(
+      backgroundColor:
+      MaterialStateColor.resolveWith((states) => Colors.white),
+      padding: const MaterialStatePropertyAll(EdgeInsets.all(10)),
+      shadowColor: MaterialStateColor.resolveWith((states) => Colors.red),
+      elevation: const MaterialStatePropertyAll(5),
+      shape: const MaterialStatePropertyAll(
+        RoundedRectangleBorder(
+            side: BorderSide(color: Colors.red, width: 2),
+            borderRadius: BorderRadius.all(Radius.circular(8))),
+      ),
+    ),
+    onPressed: (){
+      FocusManager.instance.primaryFocus?.unfocus();
+      onpressed();
+    },
+    child: Text(
+      str,
+      style: const TextStyle(
+        fontSize: 18,
+        color: Colors.red,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  );
 }

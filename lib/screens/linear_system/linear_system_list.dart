@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class LinearSystemList extends StatefulWidget{
+class LinearSystemList extends StatefulWidget {
   const LinearSystemList({super.key});
 
   @override
@@ -44,15 +44,20 @@ class _LinearSystemListState extends State<LinearSystemList> {
             ),
           ),
           child: GridView.count(
-            padding: const EdgeInsets.only(
-                left: 10, top: 20, right: 10, bottom: 10),
+            padding:
+                const EdgeInsets.only(left: 10, top: 20, right: 10, bottom: 10),
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
             crossAxisCount: 2,
             children: <Widget>[
-              CardView("Gaussian Jorden", 'lib/assets/images/linear_system/equation.png','gaussian_jorden'),
-              CardView(
-                  "Gaussian Elimination", 'lib/assets/images/linear_system/equation.png','gaussian_elimination'),
+              cardView(
+                  "Gaussian Jorden",
+                  'lib/assets/images/linear_system/equation.png',
+                  'gaussian_jorden'),
+              cardView(
+                  "Gaussian Elimination",
+                  'lib/assets/images/linear_system/equation.png',
+                  'gaussian_elimination'),
             ],
           ),
         ),
@@ -60,8 +65,7 @@ class _LinearSystemListState extends State<LinearSystemList> {
     );
   }
 
-  // ignore: non_constant_identifier_names
-  Card CardView(String str, String ico, String page) {
+  Card cardView(String str, String ico, String page) {
     return Card(
       color: Colors.white,
       shadowColor: Colors.red,

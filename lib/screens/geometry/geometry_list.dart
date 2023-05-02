@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class GeometryList extends StatefulWidget{
+class GeometryList extends StatefulWidget {
   const GeometryList({super.key});
 
   @override
@@ -44,37 +44,48 @@ class _GeometryListState extends State<GeometryList> {
             ),
           ),
           child: GridView.count(
-            padding: const EdgeInsets.only(
-                left: 10, top: 20, right: 10, bottom: 10),
+            padding:
+                const EdgeInsets.only(left: 10, top: 20, right: 10, bottom: 10),
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
             crossAxisCount: 2,
             children: <Widget>[
-              CardView("Cone", 'lib/assets/images/geometry/cone.png','cone'),
-              CardView(
-                  "Cylinder", 'lib/assets/images/geometry/cylinder.png','cylinder'),
-              CardView("Isosceles Triangle", 'lib/assets/images/geometry/isosceles_triangle.png','isosceles_triangle'),
-              CardView(
-                  "Equilateral Triangle", 'lib/assets/images/geometry/equilateral_triangle.png','equilateral_triangle'),
-              CardView("Circle", 'lib/assets/images/geometry/circle.png','circle'),
-              CardView("Sphere", 'lib/assets/images/geometry/sphere.png','sphere'),
-              CardView("Square", 'lib/assets/images/geometry/square.png','square'),
-              CardView("Cube", 'lib/assets/images/geometry/cube.png','cube'),
-              CardView("Rectangle", 'lib/assets/images/geometry/rectangle.png','rectangle'),
-              CardView("Cuboid", 'lib/assets/images/geometry/cuboid.png', 'cuboid'),
-              CardView("Rhombus", 'lib/assets/images/geometry/rhombus.png','rhombus'),
-              CardView("Parallelogram", 'lib/assets/images/geometry/parallelogram.png','parallelogram'),
-              CardView("Trapezoid", 'lib/assets/images/geometry/trapezoid.png','trapezoid'),
+              cardView("Cone", 'lib/assets/images/geometry/cone.png', 'cone'),
+              cardView("Cylinder", 'lib/assets/images/geometry/cylinder.png',
+                  'cylinder'),
+              cardView(
+                  "Isosceles Triangle",
+                  'lib/assets/images/geometry/isosceles_triangle.png',
+                  'isosceles_triangle'),
+              cardView(
+                  "Equilateral Triangle",
+                  'lib/assets/images/geometry/equilateral_triangle.png',
+                  'equilateral_triangle'),
+              cardView(
+                  "Circle", 'lib/assets/images/geometry/circle.png', 'circle'),
+              cardView(
+                  "Sphere", 'lib/assets/images/geometry/sphere.png', 'sphere'),
+              cardView(
+                  "Square", 'lib/assets/images/geometry/square.png', 'square'),
+              cardView("Cube", 'lib/assets/images/geometry/cube.png', 'cube'),
+              cardView("Rectangle", 'lib/assets/images/geometry/rectangle.png',
+                  'rectangle'),
+              cardView(
+                  "Cuboid", 'lib/assets/images/geometry/cuboid.png', 'cuboid'),
+              cardView("Rhombus", 'lib/assets/images/geometry/rhombus.png',
+                  'rhombus'),
+              cardView(
+                  "Parallelogram",
+                  'lib/assets/images/geometry/parallelogram.png',
+                  'parallelogram'),
             ],
-
           ),
         ),
       ),
     );
   }
 
-  // ignore: non_constant_identifier_names
-  Card CardView(String str, String ico, String page) {
+  Card cardView(String str, String ico, String page) {
     return Card(
       color: Colors.white,
       shadowColor: Colors.red,
@@ -98,7 +109,7 @@ class _GeometryListState extends State<GeometryList> {
                     style: const TextStyle(
                         color: Colors.red,
                         fontWeight: FontWeight.bold,
-                        fontSize: 14)),
+                        fontSize: 15)),
               ),
               //const SizedBox(height: 35),
             ],
