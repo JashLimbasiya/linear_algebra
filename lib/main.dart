@@ -145,7 +145,8 @@ ansRow(String str, double ans) {
         style: const TextStyle(fontSize: 20),
       ),
       Text(
-        ans.toStringAsFixed(2),
+        ans.toString(),
+            // .toStringAsFixed(2),
         style: const TextStyle(fontSize: 20),
       )
     ],
@@ -205,6 +206,27 @@ Card cardView(String str, String ico, Function ontap) {
       onTap: () {
         ontap();
       },
+    ),
+  );
+}
+
+texInput(
+    double boxwidth, double textsize, TextEditingController input, String str) {
+  return SizedBox(
+    width: boxwidth,
+    child: TextFormField(
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        fontSize: textsize,
+      ),
+      keyboardType: TextInputType.number,
+      controller: input,
+      decoration: InputDecoration(
+        hintText: str,
+        filled: true,
+        fillColor: Colors.white,
+      ),
     ),
   );
 }

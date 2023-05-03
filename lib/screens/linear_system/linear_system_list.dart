@@ -31,11 +31,11 @@ class _LinearSystemListState extends State<LinearSystemList> {
                   () {
                 Navigator.pushNamed(context, 'two_variable');
               }),
-              cardView(
-                  "Three Variable", 'lib/assets/images/linear_system/xyz.png',
-                  () {
-                Navigator.pushNamed(context, 'three_variable');
-              }),
+              // cardView(
+              //     "Three Variable", 'lib/assets/images/linear_system/xyz.png',
+              //     () {
+              //   Navigator.pushNamed(context, 'three_variable');
+              // }),
             ],
           ),
         ),
