@@ -146,6 +146,31 @@ class _ThreeVariableState extends State<ThreeVariable> {
                         b3 = double.parse(constb3.text);
                         c3 = double.parse(constc3.text);
                         d3 = double.parse(constd3.text);
+                        if (a1 == b1 &&
+                            b1 == c1 &&
+                            c1 == d1 &&
+                            a2 == b2 &&
+                            b2 == c2 &&
+                            c2 == d2 &&
+                            a3 == b3 &&
+                            b3 == c3 &&
+                            c3 == d3) {
+                          x = 0;
+                          y = 0;
+                          z = 0;
+                        } else {
+                          tempa1 = ((a2 * b1) - (b2 * a1));
+                          tempb1 = ((a2 * c1) - (c2 * a1));
+                          tempc1 = (((a2 * d1) - (d2 * a1)));
+                          tempa2 = ((a3 * b2) - (b3 * a2));
+                          tempb2 = ((a3 * c2) - (c3 * a2));
+                          tempc2 = (((a3 * d2) - (d3 * a2)));
+                          y = (-((tempb1 * tempc2) - (tempb2 * tempc1)) /
+                              ((tempa1 * tempb2) - (tempa2 * tempb1)));
+                          z = (-((tempc1 * tempa2) - (tempc2 * tempa1)) /
+                              ((tempa1 * tempb2) - (tempa2 * tempb1)));
+                          x = ((d1 - (c1 * z) - (b1 * y)) / a1);
+                        }
                         consta1.clear();
                         constb1.clear();
                         constc1.clear();
@@ -198,4 +223,10 @@ class _ThreeVariableState extends State<ThreeVariable> {
   double x = 0;
   double y = 0;
   double z = 0;
+  double tempa1 = 0;
+  double tempb1 = 0;
+  double tempc1 = 0;
+  double tempa2 = 0;
+  double tempb2 = 0;
+  double tempc2 = 0;
 }
