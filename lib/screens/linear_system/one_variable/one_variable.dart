@@ -44,7 +44,7 @@ class _OneVariableState extends State<OneVariable> {
                       ],
                     ),
                     const SizedBox(height: 25),
-                    textbutton('Calculate', () {
+                    whiteTextButton('Calculate', () {
                       setState(() {
                         a = double.parse(consta.text);
                         b = double.parse(constb.text);

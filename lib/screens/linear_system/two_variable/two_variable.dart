@@ -93,7 +93,7 @@ class _TwoVariableState extends State<TwoVariable> {
                       ],
                     ),
                     const SizedBox(height: 25),
-                    textbutton('Calculate', () {
+                    whiteTextButton('Calculate', () {
                       setState(() {
                         a1 = double.parse(consta1.text);
                         b1 = double.parse(constb1.text);

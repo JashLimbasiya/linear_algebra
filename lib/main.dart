@@ -146,14 +146,14 @@ ansRow(String str, double ans) {
       ),
       Text(
         ans.toString(),
-            // .toStringAsFixed(2),
+        // .toStringAsFixed(2),
         style: const TextStyle(fontSize: 20),
       )
     ],
   );
 }
 
-textbutton(String str, Function onpressed) {
+whiteTextButton(String str, Function onpressed) {
   return TextButton(
     style: ButtonStyle(
       backgroundColor: MaterialStateColor.resolveWith((states) => Colors.white),
@@ -175,6 +175,34 @@ textbutton(String str, Function onpressed) {
       style: const TextStyle(
         fontSize: 18,
         color: Colors.red,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  );
+}
+
+redTextButton(String str, Function onpressed) {
+  return TextButton(
+    style: ButtonStyle(
+      backgroundColor: MaterialStateColor.resolveWith((states) => Colors.red),
+      padding: const MaterialStatePropertyAll(EdgeInsets.all(10)),
+      shadowColor: MaterialStateColor.resolveWith((states) => Colors.red),
+      elevation: const MaterialStatePropertyAll(5),
+      shape: const MaterialStatePropertyAll(
+        RoundedRectangleBorder(
+            side: BorderSide(color: Colors.red, width: 2),
+            borderRadius: BorderRadius.all(Radius.circular(8))),
+      ),
+    ),
+    onPressed: () {
+      FocusManager.instance.primaryFocus?.unfocus();
+      onpressed;
+    },
+    child: Text(
+      str,
+      style: const TextStyle(
+        fontSize: 18,
+        color: Colors.white,
         fontWeight: FontWeight.bold,
       ),
     ),

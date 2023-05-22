@@ -158,7 +158,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        textbutton(
+                        whiteTextButton(
                           "Send",
                           () {
                             if (_formfield.currentState!.validate()) {
@@ -171,7 +171,7 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
                           },
                         ),
                         const SizedBox(width: 20),
-                        textbutton("Cancel", () => Navigator.pop(context)),
+                        whiteTextButton("Cancel", () => Navigator.pop(context)),
                       ],
                     ),
                     const SizedBox(height: 80),

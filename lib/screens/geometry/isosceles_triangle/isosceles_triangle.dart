@@ -51,7 +51,7 @@ class _IsoscelesTriangleState extends State<IsoscelesTriangle> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    textbutton('Calculate', () {
+                    whiteTextButton('Calculate', () {
                       setState(() {
                         base = double.parse(isoscelestrianglebase.text);
                         height = double.parse(isoscelestriangleheight.text);

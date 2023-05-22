@@ -40,7 +40,7 @@ class _CircleState extends State<Circle> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    textbutton('Calculate', () {
+                    whiteTextButton('Calculate', () {
                       setState(() {
                         radius = double.parse(circleradius.text);
                         perimeter = (2 * pi * radius);

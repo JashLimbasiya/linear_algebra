@@ -51,7 +51,7 @@ class _CylinderState extends State<Cylinder> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    textbutton('Calculate', () {
+                    whiteTextButton('Calculate', () {
                       setState(() {
                         radius = double.parse(cylinderradius.text);
                         height = double.parse(cylinderheight.text);

@@ -51,7 +51,7 @@ class _RhombusState extends State<Rhombus> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    textbutton('Calculate', () {
+                    whiteTextButton('Calculate', () {
                       setState(() {
                         diagonalone = double.parse(rhombusdiagonalone.text);
                         diagonaltwo = double.parse(rhombusdiagonaltwo.text);

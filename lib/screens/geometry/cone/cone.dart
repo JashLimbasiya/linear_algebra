@@ -51,7 +51,7 @@ class _ConeState extends State<Cone> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    textbutton('Calculate', () {
+                    whiteTextButton('Calculate', () {
                       setState(() {
                         radius = double.parse(coneradius.text);
                         height = double.parse(coneheight.text);

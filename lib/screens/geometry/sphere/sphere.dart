@@ -40,7 +40,7 @@ class _SphereState extends State<Sphere> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    textbutton('Calculate', () {
+                    whiteTextButton('Calculate', () {
                       setState(() {
                         radius = double.parse(circleradius.text);
                         surfacearea = (4 * pi * radius * radius);

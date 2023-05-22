@@ -40,7 +40,7 @@ class _SquareState extends State<Square> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    textbutton('Calculate', () {
+                    whiteTextButton('Calculate', () {
                       setState(() {
                         length = double.parse(squarelength.text);
                         diagonal = sqrt(2 * (length * length));

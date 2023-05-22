@@ -62,7 +62,7 @@ class _CuboidState extends State<Cuboid> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    textbutton('Calculate', () {
+                    whiteTextButton('Calculate', () {
                       setState(() {
                         length = double.parse(cuboidlength.text);
                         width = double.parse(cuboidwidth.text);

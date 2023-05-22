@@ -40,7 +40,7 @@ class _EquilateralTriangleState extends State<EquilateralTriangle> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    textbutton('Calculate', () {
+                    whiteTextButton('Calculate', () {
                       setState(() {
                         side = double.parse(equilateraltriangleside.text);
                         perimeter = (3 * side);

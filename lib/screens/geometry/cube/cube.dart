@@ -40,7 +40,7 @@ class _CubeState extends State<Cube> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    textbutton('Calculate', () {
+                    whiteTextButton('Calculate', () {
                       setState(() {
                         length = double.parse(cubelength.text);
                         lateralsurfacearea = (4 * length * length);

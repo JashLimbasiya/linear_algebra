@@ -51,7 +51,7 @@ class _RectangleState extends State<Rectangle> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    textbutton('Calculate', () {
+                    whiteTextButton('Calculate', () {
                       setState(() {
                         length = double.parse(rectanglelength.text);
                         width = double.parse(rectanglewidth.text);

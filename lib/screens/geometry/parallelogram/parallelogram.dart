@@ -62,7 +62,7 @@ class _ParallelogramState extends State<Parallelogram> {
                       ),
                     ),
                     const SizedBox(height: 25),
-                    textbutton('Calculate', () {
+                    whiteTextButton('Calculate', () {
                       setState(() {
                         base = double.parse(parallelogrambase.text);
                         height = double.parse(parallelogramheight.text);
