@@ -9,6 +9,12 @@ class VectorAddition extends StatefulWidget {
 }
 
 int dimflag = 1;
+TextEditingController vectora1 = TextEditingController();
+TextEditingController vectora2 = TextEditingController();
+TextEditingController vectora3 = TextEditingController();
+TextEditingController vectorb1 = TextEditingController();
+TextEditingController vectorb2 = TextEditingController();
+TextEditingController vectorb3 = TextEditingController();
 
 class _VectorAdditionState extends State<VectorAddition> {
   @override
@@ -65,6 +71,55 @@ class _VectorAdditionState extends State<VectorAddition> {
                   });
                 })
               ]),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Vector A : ",
+                    style: TextStyle(
+                      fontSize: 15
+                    ),
+                  ),
+                  const SizedBox(width: 15),
+                  SizedBox(
+                    width: 100,
+                    child: texInput(100, 15, vectora1, "a1"),
+                  )
+                ],
+              ),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Vector B : ",
+                    style: TextStyle(
+                        fontSize: 15
+                    ),
+                  ),
+                  const SizedBox(width: 15),
+                  SizedBox(
+                    width: 100,
+                    child: texInput(100, 15, vectorb1, "b1"),
+                  )
+                ],
+              ),
+              const SizedBox(height: 25),
+              whiteTextButton('Calculate', () {
+                setState(() {
+                  vectora1.clear();
+                  vectorb1.clear();
+                  _VectorAdditionState();
+                });
+              }),
+              const SizedBox(height: 25),
+              const Divider(
+                color: Color.fromARGB(70, 200, 0, 0),
+                thickness: 3,
+                indent: 5,
+                endIndent: 5,
+              ),
               const SizedBox(height: 10),
             ],
           );
