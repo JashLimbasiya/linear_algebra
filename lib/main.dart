@@ -135,7 +135,7 @@ background() {
   );
 }
 
-ansRow(String str, double ans) {
+ansRow(String str) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.start,
     children: [
@@ -144,11 +144,6 @@ ansRow(String str, double ans) {
         str,
         style: const TextStyle(fontSize: 20),
       ),
-      Text(
-        ans.toString(),
-        // .toStringAsFixed(2),
-        style: const TextStyle(fontSize: 20),
-      )
     ],
   );
 }

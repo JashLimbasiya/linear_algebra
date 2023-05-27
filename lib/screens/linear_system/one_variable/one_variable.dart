@@ -62,7 +62,7 @@ class _OneVariableState extends State<OneVariable> {
                       endIndent: 5,
                     ),
                     const SizedBox(height: 10),
-                    ansRow("X = ", x),
+                    ansRow("X = $x"),
                     const SizedBox(height: 20),
                   ],
                 ),

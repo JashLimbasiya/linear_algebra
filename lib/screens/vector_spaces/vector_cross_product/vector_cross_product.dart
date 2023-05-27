@@ -295,16 +295,7 @@ class _VectorCrossProductState extends State<VectorCrossProduct> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                const SizedBox(width: 15),
-                Text(
-                  "A X B : ( $c1 , $c2 , $c3 )",
-                  style: const TextStyle(fontSize: 20),
-                ),
-              ],
-            ),
+            ansRow("A X B : ( $c1 , $c2 , $c3 )"),
             const SizedBox(height: 20),
           ],
         );
