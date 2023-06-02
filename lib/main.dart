@@ -140,10 +140,16 @@ ansRow(String str) {
     mainAxisAlignment: MainAxisAlignment.start,
     children: [
       const SizedBox(width: 15, height: 28),
-      Text(
-        str,
-        style: const TextStyle(fontSize: 20),
+      Expanded(
+        child: Text(
+          str,
+          style: const TextStyle(fontSize: 20),
+          softWrap: false,
+          maxLines: 5,
+          overflow: TextOverflow.ellipsis,
+        ),
       ),
+      const SizedBox(width: 15),
     ],
   );
 }
