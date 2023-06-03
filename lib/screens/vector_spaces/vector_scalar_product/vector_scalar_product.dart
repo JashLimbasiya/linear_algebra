@@ -105,7 +105,7 @@ class _VectorScalarProductState extends State<VectorScalarProduct> {
               setState(() {
                 a1 = double.parse(vectora1.text);
                 b1 = double.parse(vectorb1.text);
-                ans = (a1 * b1);
+                ans = double.parse((a1 * b1).toStringAsFixed(2));
                 vectora1.clear();
                 vectorb1.clear();
                 _VectorScalarProductState();
@@ -201,7 +201,7 @@ class _VectorScalarProductState extends State<VectorScalarProduct> {
                 a2 = double.parse(vectora2.text);
                 b1 = double.parse(vectorb1.text);
                 b2 = double.parse(vectorb2.text);
-                ans = (a1 * b1) + (a2 * b2);
+                ans = double.parse(((a1 * b1) + (a2 * b2)).toStringAsFixed(2));
                 vectora1.clear();
                 vectora2.clear();
                 vectorb1.clear();
@@ -309,7 +309,8 @@ class _VectorScalarProductState extends State<VectorScalarProduct> {
                 b1 = double.parse(vectorb1.text);
                 b2 = double.parse(vectorb2.text);
                 b3 = double.parse(vectorb3.text);
-                ans = (a1 * b1) + (a2 * b2) + (a3 * b3);
+                ans = double.parse(
+                    ((a1 * b1) + (a2 * b2) + (a3 * b3)).toStringAsFixed(2));
                 vectora1.clear();
                 vectora2.clear();
                 vectora3.clear();

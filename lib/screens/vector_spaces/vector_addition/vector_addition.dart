@@ -111,7 +111,7 @@ class _VectorAdditionState extends State<VectorAddition> {
               setState(() {
                 a1 = double.parse(vectora1.text);
                 b1 = double.parse(vectorb1.text);
-                c1 = a1 + b1;
+                c1 = double.parse((a1 + b1).toStringAsFixed(2));
                 vectora1.clear();
                 vectorb1.clear();
                 _VectorAdditionState();
@@ -213,8 +213,8 @@ class _VectorAdditionState extends State<VectorAddition> {
                 a2 = double.parse(vectora2.text);
                 b1 = double.parse(vectorb1.text);
                 b2 = double.parse(vectorb2.text);
-                c1 = a1 + b1;
-                c2 = a2 + b2;
+                c1 = double.parse((a1 + b1).toStringAsFixed(2));
+                c2 = double.parse((a2 + b2).toStringAsFixed(2));
                 vectora1.clear();
                 vectora2.clear();
                 vectorb1.clear();
@@ -328,9 +328,9 @@ class _VectorAdditionState extends State<VectorAddition> {
                 b1 = double.parse(vectorb1.text);
                 b2 = double.parse(vectorb2.text);
                 b3 = double.parse(vectorb3.text);
-                c1 = a1 + b1;
-                c2 = a2 + b2;
-                c3 = a3 + b3;
+                c1 = double.parse((a1 + b1).toStringAsFixed(2));
+                c2 = double.parse((a2 + b2).toStringAsFixed(2));
+                c3 = double.parse((a3 + b3).toStringAsFixed(2));
                 vectora1.clear();
                 vectora2.clear();
                 vectora3.clear();

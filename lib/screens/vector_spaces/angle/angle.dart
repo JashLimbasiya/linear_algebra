@@ -110,8 +110,9 @@ class _AngleState extends State<Angle> {
                 dot = (a1 * b1);
                 magnitudeA = a1;
                 magnitudeB = b1;
-                angle =
-                    (((acos((dot / (magnitudeA * magnitudeB)))) * 180) / pi);
+                angle = double.parse(
+                    (((acos((dot / (magnitudeA * magnitudeB)))) * 180) / pi)
+                        .toStringAsFixed(2));
                 vectora1.clear();
                 vectorb1.clear();
                 _AngleState();
@@ -210,8 +211,9 @@ class _AngleState extends State<Angle> {
                 dot = (a1 * b1) + (a2 * b2);
                 magnitudeA = sqrt((a1 * a1) + (a2 * a2));
                 magnitudeB = sqrt((b1 * b1) + (b2 * b2));
-                angle =
-                    (((acos((dot / (magnitudeA * magnitudeB)))) * 180) / pi);
+                angle = double.parse(
+                    (((acos((dot / (magnitudeA * magnitudeB)))) * 180) / pi)
+                        .toStringAsFixed(2));
                 vectora1.clear();
                 vectora2.clear();
                 vectorb1.clear();
@@ -322,8 +324,9 @@ class _AngleState extends State<Angle> {
                 dot = (a1 * b1) + (a2 * b2) + (a3 * b3);
                 magnitudeA = sqrt((a1 * a1) + (a2 * a2) + (a3 * a3));
                 magnitudeB = sqrt((b1 * b1) + (b2 * b2) + (b3 * b3));
-                angle =
-                    (((acos((dot / (magnitudeA * magnitudeB)))) * 180) / pi);
+                angle = double.parse(
+                    (((acos((dot / (magnitudeA * magnitudeB)))) * 180) / pi)
+                        .toStringAsFixed(2));
                 vectora1.clear();
                 vectora2.clear();
                 vectora3.clear();

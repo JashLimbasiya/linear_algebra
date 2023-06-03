@@ -275,9 +275,9 @@ class _VectorCrossProductState extends State<VectorCrossProduct> {
                 b1 = double.parse(vectorb1.text);
                 b2 = double.parse(vectorb2.text);
                 b3 = double.parse(vectorb3.text);
-                c1 = ((a2 * b3) - (a3 * b2));
-                c2 = ((a3 * b1) - (a1 * b3));
-                c3 = ((a1 * b2) - (a2 * b1));
+                c1 = double.parse(((a2 * b3) - (a3 * b2)).toStringAsFixed(2));
+                c2 = double.parse(((a3 * b1) - (a1 * b3)).toStringAsFixed(2));
+                c3 = double.parse(((a1 * b2) - (a2 * b1)).toStringAsFixed(2));
                 vectora1.clear();
                 vectora2.clear();
                 vectora3.clear();
