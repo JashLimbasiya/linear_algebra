@@ -165,11 +165,16 @@ class _ThreeVariableState extends State<ThreeVariable> {
                           tempa2 = ((a3 * b2) - (b3 * a2));
                           tempb2 = ((a3 * c2) - (c3 * a2));
                           tempc2 = (((a3 * d2) - (d3 * a2)));
-                          y = (-((tempb1 * tempc2) - (tempb2 * tempc1)) /
-                              ((tempa1 * tempb2) - (tempa2 * tempb1)));
-                          z = (-((tempc1 * tempa2) - (tempc2 * tempa1)) /
-                              ((tempa1 * tempb2) - (tempa2 * tempb1)));
-                          x = ((d1 - (c1 * z) - (b1 * y)) / a1);
+                          y = double.parse(
+                              (-((tempb1 * tempc2) - (tempb2 * tempc1)) /
+                                      ((tempa1 * tempb2) - (tempa2 * tempb1)))
+                                  .toStringAsFixed(2));
+                          z = double.parse(
+                              (-((tempc1 * tempa2) - (tempc2 * tempa1)) /
+                                      ((tempa1 * tempb2) - (tempa2 * tempb1)))
+                                  .toStringAsFixed(2));
+                          x = double.parse(((d1 - (c1 * z) - (b1 * y)) / a1)
+                              .toStringAsFixed(2));
                         }
                         consta1.clear();
                         constb1.clear();

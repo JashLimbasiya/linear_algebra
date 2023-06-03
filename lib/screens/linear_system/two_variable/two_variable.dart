@@ -103,8 +103,12 @@ class _TwoVariableState extends State<TwoVariable> {
                         c2 = double.parse(constc2.text);
                         c1 = (-c1);
                         c2 = (-c2);
-                        x = ((b1 * c2) - (b2 * c1)) / ((a1 * b2) - (a2 * b1));
-                        y = ((c1 * a2) - (c2 * a1)) / ((a1 * b2) - (a2 * b1));
+                        x = double.parse(
+                            (((b1 * c2) - (b2 * c1)) / ((a1 * b2) - (a2 * b1)))
+                                .toStringAsFixed(2));
+                        y = double.parse(
+                            (((c1 * a2) - (c2 * a1)) / ((a1 * b2) - (a2 * b1)))
+                                .toStringAsFixed(2));
                         consta1.clear();
                         constb1.clear();
                         constc1.clear();

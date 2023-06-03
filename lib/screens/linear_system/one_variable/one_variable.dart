@@ -48,7 +48,7 @@ class _OneVariableState extends State<OneVariable> {
                       setState(() {
                         a = double.parse(consta.text);
                         b = double.parse(constb.text);
-                        x = (b / a);
+                        x = double.parse((b / a).toStringAsFixed(2));
                         consta.clear();
                         constb.clear();
                         _OneVariableState();

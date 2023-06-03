@@ -139,7 +139,7 @@ ansRow(String str) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.start,
     children: [
-      const SizedBox(width: 15, height: 28),
+      const SizedBox(width: 15, height: 30),
       Expanded(
         child: Text(
           str,
