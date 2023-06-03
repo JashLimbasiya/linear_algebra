@@ -43,11 +43,16 @@ class _CubeState extends State<Cube> {
                     whiteTextButton('Calculate', () {
                       setState(() {
                         length = double.parse(cubelength.text);
-                        lateralsurfacearea = (4 * length * length);
-                        totalsurfacearea = (6 * length * length);
-                        volume = (length * length * length);
-                        diagonalface = (sqrt(2) * length);
-                        diagonal = (sqrt(3) * length);
+                        lateralsurfacearea = double.parse(
+                            (4 * length * length).toStringAsFixed(2));
+                        totalsurfacearea = double.parse(
+                            (6 * length * length).toStringAsFixed(2));
+                        volume = double.parse(
+                            (length * length * length).toStringAsFixed(2));
+                        diagonalface =
+                            double.parse((sqrt(2) * length).toStringAsFixed(2));
+                        diagonal =
+                            double.parse((sqrt(3) * length).toStringAsFixed(2));
                         cubelength.clear();
                         _CubeState();
                       });

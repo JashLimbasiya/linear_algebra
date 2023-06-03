@@ -43,8 +43,10 @@ class _CircleState extends State<Circle> {
                     whiteTextButton('Calculate', () {
                       setState(() {
                         radius = double.parse(circleradius.text);
-                        perimeter = (2 * pi * radius);
-                        area = (pi * radius * radius);
+                        perimeter =
+                            double.parse((2 * pi * radius).toStringAsFixed(2));
+                        area = double.parse(
+                            (pi * radius * radius).toStringAsFixed(2));
                         circleradius.clear();
                         _CircleState();
                       });

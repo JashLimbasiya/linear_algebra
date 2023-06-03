@@ -55,10 +55,15 @@ class _ConeState extends State<Cone> {
                       setState(() {
                         radius = double.parse(coneradius.text);
                         height = double.parse(coneheight.text);
-                        slantheight =
-                            sqrt(((radius * radius) + (height * height)));
-                        surfacearea = (pi * radius * (radius + slantheight));
-                        volume = ((1 / 3) * pi * radius * radius * height);
+                        slantheight = double.parse(
+                            (sqrt(((radius * radius) + (height * height))))
+                                .toStringAsFixed(2));
+                        surfacearea = double.parse(
+                            (pi * radius * (radius + slantheight))
+                                .toStringAsFixed(2));
+                        volume = double.parse(
+                            ((1 / 3) * pi * radius * radius * height)
+                                .toStringAsFixed(2));
                         coneradius.clear();
                         coneheight.clear();
                         _ConeState();

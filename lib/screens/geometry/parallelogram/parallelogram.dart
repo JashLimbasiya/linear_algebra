@@ -73,10 +73,13 @@ class _ParallelogramState extends State<Parallelogram> {
                         angletwo = 180 - angle;
                         minangle = min(angle, angletwo);
                         maxangle = max(angle, angletwo);
-                        oppositeangle = ((90 - minangle) * pi / 180);
-                        length = (height / (cos(oppositeangle)));
-                        perimeter = (2 * (length + base));
-                        area = (base * height);
+                        oppositeangle = double.parse(
+                            ((90 - minangle) * pi / 180).toStringAsFixed(2));
+                        length = double.parse(
+                            (height / (cos(oppositeangle))).toStringAsFixed(2));
+                        perimeter = double.parse(
+                            (2 * (length + base)).toStringAsFixed(2));
+                        area = double.parse((base * height).toStringAsFixed(2));
                         parallelogrambase.clear();
                         parallelogramheight.clear();
                         parallelogramangle.clear();

@@ -55,9 +55,13 @@ class _RectangleState extends State<Rectangle> {
                       setState(() {
                         length = double.parse(rectanglelength.text);
                         width = double.parse(rectanglewidth.text);
-                        diagonal = sqrt((length * length) + (width * width));
-                        perimeter = (2 * (length + width));
-                        area = (length * width);
+                        diagonal = double.parse(
+                            (sqrt((length * length) + (width * width)))
+                                .toStringAsFixed(2));
+                        perimeter = double.parse(
+                            (2 * (length + width)).toStringAsFixed(2));
+                        area =
+                            double.parse((length * width).toStringAsFixed(2));
                         rectanglelength.clear();
                         rectanglewidth.clear();
                         _RectangleState();

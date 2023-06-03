@@ -43,9 +43,12 @@ class _SquareState extends State<Square> {
                     whiteTextButton('Calculate', () {
                       setState(() {
                         length = double.parse(squarelength.text);
-                        diagonal = sqrt(2 * (length * length));
-                        perimeter = (4 * length);
-                        area = (length * length);
+                        diagonal = double.parse(
+                            (sqrt(2 * (length * length))).toStringAsFixed(2));
+                        perimeter =
+                            double.parse((4 * length).toStringAsFixed(2));
+                        area =
+                            double.parse((length * length).toStringAsFixed(2));
                         squarelength.clear();
                         _SquareState();
                       });

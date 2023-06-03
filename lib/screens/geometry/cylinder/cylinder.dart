@@ -55,10 +55,13 @@ class _CylinderState extends State<Cylinder> {
                       setState(() {
                         radius = double.parse(cylinderradius.text);
                         height = double.parse(cylinderheight.text);
-                        curvedsurfacearea = (2 * pi * radius * height);
-                        totalsurfacearea =
-                            (2 * pi * radius * (radius + height));
-                        volume = (pi * radius * radius * height);
+                        curvedsurfacearea = double.parse(
+                            (2 * pi * radius * height).toStringAsFixed(2));
+                        totalsurfacearea = double.parse(
+                            (2 * pi * radius * (radius + height))
+                                .toStringAsFixed(2));
+                        volume = double.parse(
+                            (pi * radius * radius * height).toStringAsFixed(2));
                         cylinderradius.clear();
                         cylinderheight.clear();
                         _CylinderState();

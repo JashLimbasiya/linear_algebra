@@ -43,8 +43,9 @@ class _EquilateralTriangleState extends State<EquilateralTriangle> {
                     whiteTextButton('Calculate', () {
                       setState(() {
                         side = double.parse(equilateraltriangleside.text);
-                        perimeter = (3 * side);
-                        area = (sqrt(3) * side * side / 4);
+                        perimeter = double.parse((3 * side).toStringAsFixed(2));
+                        area = double.parse(
+                            (sqrt(3) * side * side / 4).toStringAsFixed(2));
                         equilateraltriangleside.clear();
                         _EquilateralTriangleState();
                       });

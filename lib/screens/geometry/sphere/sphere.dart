@@ -43,8 +43,11 @@ class _SphereState extends State<Sphere> {
                     whiteTextButton('Calculate', () {
                       setState(() {
                         radius = double.parse(circleradius.text);
-                        surfacearea = (4 * pi * radius * radius);
-                        volume = (4 * pi * radius * radius * radius / 3);
+                        surfacearea = double.parse(
+                            (4 * pi * radius * radius).toStringAsFixed(2));
+                        volume = double.parse(
+                            (4 * pi * radius * radius * radius / 3)
+                                .toStringAsFixed(2));
                         circleradius.clear();
                         _SphereState();
                       });

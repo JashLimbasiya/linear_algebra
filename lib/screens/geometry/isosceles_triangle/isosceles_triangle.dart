@@ -55,9 +55,13 @@ class _IsoscelesTriangleState extends State<IsoscelesTriangle> {
                       setState(() {
                         base = double.parse(isoscelestrianglebase.text);
                         height = double.parse(isoscelestriangleheight.text);
-                        equalside = sqrt((height * height) + (base * base / 4));
-                        perimeter = (base + (2 * equalside));
-                        area = (base * height / 2);
+                        equalside = double.parse(
+                            (sqrt((height * height) + (base * base / 4)))
+                                .toStringAsFixed(2));
+                        perimeter = double.parse(
+                            (base + (2 * equalside)).toStringAsFixed(2));
+                        area = double.parse(
+                            (base * height / 2).toStringAsFixed(2));
                         isoscelestrianglebase.clear();
                         isoscelestriangleheight.clear();
                         _IsoscelesTriangleState();

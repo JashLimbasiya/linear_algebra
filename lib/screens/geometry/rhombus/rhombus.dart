@@ -55,11 +55,15 @@ class _RhombusState extends State<Rhombus> {
                       setState(() {
                         diagonalone = double.parse(rhombusdiagonalone.text);
                         diagonaltwo = double.parse(rhombusdiagonaltwo.text);
-                        length = ((sqrt((diagonalone * diagonalone) +
-                                (diagonaltwo * diagonaltwo))) /
-                            2);
-                        perimeter = (4 * length);
-                        area = (diagonalone * diagonaltwo / 2);
+                        length = double.parse(((sqrt(
+                                    (diagonalone * diagonalone) +
+                                        (diagonaltwo * diagonaltwo))) /
+                                2)
+                            .toStringAsFixed(2));
+                        perimeter =
+                            double.parse((4 * length).toStringAsFixed(2));
+                        area = double.parse(
+                            (diagonalone * diagonaltwo / 2).toStringAsFixed(2));
                         rhombusdiagonalone.clear();
                         rhombusdiagonaltwo.clear();
                         _RhombusState();

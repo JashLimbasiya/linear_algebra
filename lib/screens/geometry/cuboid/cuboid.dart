@@ -67,16 +67,21 @@ class _CuboidState extends State<Cuboid> {
                         length = double.parse(cuboidlength.text);
                         width = double.parse(cuboidwidth.text);
                         height = double.parse(cuboidheight.text);
-                        volume = (length * width * height);
-                        lateralsurfacearea = (2 * height * (length + width));
-                        totalsurfacearea = (2 *
-                            ((length * width) +
-                                (width * height) +
-                                (height * length)));
-                        perimeter = (4 * (length + width + height));
-                        diagonal = sqrt((length * length) +
-                            (width * width) +
-                            (height * height));
+                        volume = double.parse(
+                            (length * width * height).toStringAsFixed(2));
+                        lateralsurfacearea = double.parse(
+                            (2 * height * (length + width)).toStringAsFixed(2));
+                        totalsurfacearea = double.parse((2 *
+                                ((length * width) +
+                                    (width * height) +
+                                    (height * length)))
+                            .toStringAsFixed(2));
+                        perimeter = double.parse(
+                            (4 * (length + width + height)).toStringAsFixed(2));
+                        diagonal = double.parse((sqrt((length * length) +
+                                (width * width) +
+                                (height * height)))
+                            .toStringAsFixed(2));
                         cuboidlength.clear();
                         cuboidwidth.clear();
                         cuboidheight.clear();
