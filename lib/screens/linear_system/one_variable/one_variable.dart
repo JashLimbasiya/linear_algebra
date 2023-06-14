@@ -32,7 +32,7 @@ class _OneVariableState extends State<OneVariable> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        texInput(100, 30, consta, 'A'),
+                        textInput(100, 30, consta, 'A'),
                         const Text(
                           "X = ",
                           style: TextStyle(
@@ -40,7 +40,7 @@ class _OneVariableState extends State<OneVariable> {
                             fontSize: 30,
                           ),
                         ),
-                        texInput(100, 30, constb, 'B'),
+                        textInput(100, 30, constb, 'B'),
                       ],
                     ),
                     const SizedBox(height: 25),

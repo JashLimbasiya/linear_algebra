@@ -239,7 +239,7 @@ Card cardView(String str, String ico, Function ontap) {
   );
 }
 
-texInput(
+textInput(
     double boxwidth, double textsize, TextEditingController input, String str) {
   return SizedBox(
     width: boxwidth,

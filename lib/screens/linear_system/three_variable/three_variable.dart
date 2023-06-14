@@ -42,7 +42,7 @@ class _ThreeVariableState extends State<ThreeVariable> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        texInput(50, 20, consta1, 'A1'),
+                        textInput(50, 20, consta1, 'A1'),
                         const Text(
                           "X + ",
                           style: TextStyle(
@@ -50,7 +50,7 @@ class _ThreeVariableState extends State<ThreeVariable> {
                             fontSize: 20,
                           ),
                         ),
-                        texInput(50, 20, constb1, 'B1'),
+                        textInput(50, 20, constb1, 'B1'),
                         const Text(
                           "Y + ",
                           style: TextStyle(
@@ -58,7 +58,7 @@ class _ThreeVariableState extends State<ThreeVariable> {
                             fontSize: 20,
                           ),
                         ),
-                        texInput(50, 20, constc1, 'C1'),
+                        textInput(50, 20, constc1, 'C1'),
                         const Text(
                           "Z = ",
                           style: TextStyle(
@@ -66,14 +66,14 @@ class _ThreeVariableState extends State<ThreeVariable> {
                             fontSize: 20,
                           ),
                         ),
-                        texInput(50, 20, constd1, 'D1'),
+                        textInput(50, 20, constd1, 'D1'),
                       ],
                     ),
                     const SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        texInput(50, 20, consta2, 'A2'),
+                        textInput(50, 20, consta2, 'A2'),
                         const Text(
                           "X + ",
                           style: TextStyle(
@@ -81,7 +81,7 @@ class _ThreeVariableState extends State<ThreeVariable> {
                             fontSize: 20,
                           ),
                         ),
-                        texInput(50, 20, constb2, 'B2'),
+                        textInput(50, 20, constb2, 'B2'),
                         const Text(
                           "Y + ",
                           style: TextStyle(
@@ -89,7 +89,7 @@ class _ThreeVariableState extends State<ThreeVariable> {
                             fontSize: 20,
                           ),
                         ),
-                        texInput(50, 20, constc2, 'C2'),
+                        textInput(50, 20, constc2, 'C2'),
                         const Text(
                           "Z = ",
                           style: TextStyle(
@@ -97,14 +97,14 @@ class _ThreeVariableState extends State<ThreeVariable> {
                             fontSize: 20,
                           ),
                         ),
-                        texInput(50, 20, constd2, 'D2'),
+                        textInput(50, 20, constd2, 'D2'),
                       ],
                     ),
                     const SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        texInput(50, 20, consta3, 'A3'),
+                        textInput(50, 20, consta3, 'A3'),
                         const Text(
                           "X + ",
                           style: TextStyle(
@@ -112,7 +112,7 @@ class _ThreeVariableState extends State<ThreeVariable> {
                             fontSize: 20,
                           ),
                         ),
-                        texInput(50, 20, constb3, 'B3'),
+                        textInput(50, 20, constb3, 'B3'),
                         const Text(
                           "Y + ",
                           style: TextStyle(
@@ -120,7 +120,7 @@ class _ThreeVariableState extends State<ThreeVariable> {
                             fontSize: 20,
                           ),
                         ),
-                        texInput(50, 20, constc3, 'C3'),
+                        textInput(50, 20, constc3, 'C3'),
                         const Text(
                           "Z = ",
                           style: TextStyle(
@@ -128,7 +128,7 @@ class _ThreeVariableState extends State<ThreeVariable> {
                             fontSize: 20,
                           ),
                         ),
-                        texInput(50, 20, constd3, 'D3'),
+                        textInput(50, 20, constd3, 'D3'),
                       ],
                     ),
                     const SizedBox(height: 25),

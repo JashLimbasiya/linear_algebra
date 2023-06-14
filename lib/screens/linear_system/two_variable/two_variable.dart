@@ -36,7 +36,7 @@ class _TwoVariableState extends State<TwoVariable> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        texInput(70, 25, consta1, 'A1'),
+                        textInput(70, 25, consta1, 'A1'),
                         const Text(
                           "X + ",
                           style: TextStyle(
@@ -44,7 +44,7 @@ class _TwoVariableState extends State<TwoVariable> {
                             fontSize: 25,
                           ),
                         ),
-                        texInput(70, 25, constb1, 'B1'),
+                        textInput(70, 25, constb1, 'B1'),
                         const Text(
                           "Y + ",
                           style: TextStyle(
@@ -52,7 +52,7 @@ class _TwoVariableState extends State<TwoVariable> {
                             fontSize: 25,
                           ),
                         ),
-                        texInput(70, 25, constc1, 'C1'),
+                        textInput(70, 25, constc1, 'C1'),
                         const Text(
                           " = 0",
                           style: TextStyle(
@@ -66,7 +66,7 @@ class _TwoVariableState extends State<TwoVariable> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        texInput(70, 25, consta2, 'A2'),
+                        textInput(70, 25, consta2, 'A2'),
                         const Text(
                           "X + ",
                           style: TextStyle(
@@ -74,7 +74,7 @@ class _TwoVariableState extends State<TwoVariable> {
                             fontSize: 25,
                           ),
                         ),
-                        texInput(70, 25, constb2, 'B2'),
+                        textInput(70, 25, constb2, 'B2'),
                         const Text(
                           "Y + ",
                           style: TextStyle(
@@ -82,7 +82,7 @@ class _TwoVariableState extends State<TwoVariable> {
                             fontSize: 25,
                           ),
                         ),
-                        texInput(70, 25, constc2, 'C2'),
+                        textInput(70, 25, constc2, 'C2'),
                         const Text(
                           " = 0",
                           style: TextStyle(

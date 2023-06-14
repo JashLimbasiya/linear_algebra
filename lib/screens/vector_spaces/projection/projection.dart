@@ -99,7 +99,7 @@ class _ProjectionState extends State<Projection> {
                 ),
                 const SizedBox(width: 15),
                 SizedBox(
-                  child: texInput(100, 15, vectora1, "a1"),
+                  child: textInput(100, 15, vectora1, "a1"),
                 )
               ],
             ),
@@ -113,7 +113,7 @@ class _ProjectionState extends State<Projection> {
                 ),
                 const SizedBox(width: 15),
                 SizedBox(
-                  child: texInput(100, 15, vectorb1, "b1"),
+                  child: textInput(100, 15, vectorb1, "b1"),
                 )
               ],
             ),
@@ -207,11 +207,11 @@ class _ProjectionState extends State<Projection> {
                 ),
                 const SizedBox(width: 15),
                 SizedBox(
-                  child: texInput(80, 15, vectora1, "a1"),
+                  child: textInput(80, 15, vectora1, "a1"),
                 ),
                 const SizedBox(width: 10),
                 SizedBox(
-                  child: texInput(80, 15, vectora2, "a2"),
+                  child: textInput(80, 15, vectora2, "a2"),
                 ),
               ],
             ),
@@ -225,11 +225,11 @@ class _ProjectionState extends State<Projection> {
                 ),
                 const SizedBox(width: 15),
                 SizedBox(
-                  child: texInput(80, 15, vectorb1, "b1"),
+                  child: textInput(80, 15, vectorb1, "b1"),
                 ),
                 const SizedBox(width: 10),
                 SizedBox(
-                  child: texInput(80, 15, vectorb2, "b2"),
+                  child: textInput(80, 15, vectorb2, "b2"),
                 ),
               ],
             ),
@@ -329,15 +329,15 @@ class _ProjectionState extends State<Projection> {
                 ),
                 const SizedBox(width: 15),
                 SizedBox(
-                  child: texInput(60, 15, vectora1, "a1"),
+                  child: textInput(60, 15, vectora1, "a1"),
                 ),
                 const SizedBox(width: 10),
                 SizedBox(
-                  child: texInput(60, 15, vectora2, "a2"),
+                  child: textInput(60, 15, vectora2, "a2"),
                 ),
                 const SizedBox(width: 10),
                 SizedBox(
-                  child: texInput(60, 15, vectora3, "a3"),
+                  child: textInput(60, 15, vectora3, "a3"),
                 ),
               ],
             ),
@@ -351,15 +351,15 @@ class _ProjectionState extends State<Projection> {
                 ),
                 const SizedBox(width: 15),
                 SizedBox(
-                  child: texInput(60, 15, vectorb1, "b1"),
+                  child: textInput(60, 15, vectorb1, "b1"),
                 ),
                 const SizedBox(width: 10),
                 SizedBox(
-                  child: texInput(60, 15, vectorb2, "b2"),
+                  child: textInput(60, 15, vectorb2, "b2"),
                 ),
                 const SizedBox(width: 10),
                 SizedBox(
-                  child: texInput(60, 15, vectorb3, "b2"),
+                  child: textInput(60, 15, vectorb3, "b2"),
                 ),
               ],
             ),
