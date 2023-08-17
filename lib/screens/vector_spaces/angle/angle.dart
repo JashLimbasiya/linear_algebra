@@ -126,7 +126,7 @@ class _AngleState extends State<Angle> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("Angle = $angle°"),
+            textRow("Angle = $angle°"),
             const SizedBox(height: 20),
           ],
         );
@@ -229,7 +229,7 @@ class _AngleState extends State<Angle> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("Angle = $angle°"),
+            textRow("Angle = $angle°"),
             const SizedBox(height: 20),
           ],
         );
@@ -344,7 +344,7 @@ class _AngleState extends State<Angle> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("Angle = $angle°"),
+            textRow("Angle = $angle°"),
             const SizedBox(height: 20),
           ],
         );

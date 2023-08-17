@@ -125,7 +125,7 @@ class _VectorAdditionState extends State<VectorAddition> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("Vector A+B : ( $c1 )"),
+            textRow("Vector A+B : ( $c1 )"),
             const SizedBox(height: 20),
           ],
         );
@@ -230,7 +230,7 @@ class _VectorAdditionState extends State<VectorAddition> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("Vector A+B : ( $c1 , $c2 )"),
+            textRow("Vector A+B : ( $c1 , $c2 )"),
             const SizedBox(height: 20),
           ],
         );
@@ -348,7 +348,7 @@ class _VectorAdditionState extends State<VectorAddition> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("Vector A+B : ( $c1 , $c2 , $c3 )"),
+            textRow("Vector A+B : ( $c1 , $c2 , $c3 )"),
             const SizedBox(height: 20),
           ],
         );

@@ -142,8 +142,8 @@ class _ProjectionState extends State<Projection> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("Projection of A on B : ( $cAB1 )"),
-            ansRow("Projection of B on A : ( $cBA1 )"),
+            textRow("Projection of A on B : ( $cAB1 )"),
+            textRow("Projection of B on A : ( $cBA1 )"),
             const SizedBox(height: 20),
           ],
         );
@@ -264,8 +264,8 @@ class _ProjectionState extends State<Projection> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("Projection of A on B : ( $cAB1 , $cAB2 )"),
-            ansRow("Projection of B on A : ( $cBA1 , $cBA2 )"),
+            textRow("Projection of A on B : ( $cAB1 , $cAB2 )"),
+            textRow("Projection of B on A : ( $cBA1 , $cBA2 )"),
             const SizedBox(height: 20),
           ],
         );
@@ -400,8 +400,8 @@ class _ProjectionState extends State<Projection> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("Projection of A on B : ( $cAB1 , $cAB2 , $cAB3 )"),
-            ansRow("Projection of B on A : ( $cBA1 , $cBA2 , $cBA3 )"),
+            textRow("Projection of A on B : ( $cAB1 , $cAB2 , $cAB3 )"),
+            textRow("Projection of B on A : ( $cBA1 , $cBA2 , $cBA3 )"),
             const SizedBox(height: 20),
           ],
         );

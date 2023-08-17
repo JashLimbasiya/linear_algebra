@@ -135,7 +135,7 @@ background() {
   );
 }
 
-ansRow(String str) {
+textRow(String str) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.start,
     children: [

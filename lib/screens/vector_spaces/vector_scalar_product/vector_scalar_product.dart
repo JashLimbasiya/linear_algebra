@@ -119,7 +119,7 @@ class _VectorScalarProductState extends State<VectorScalarProduct> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("A·B = $ans"),
+            textRow("A·B = $ans"),
             const SizedBox(height: 20),
           ],
         );
@@ -217,7 +217,7 @@ class _VectorScalarProductState extends State<VectorScalarProduct> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("A·B = $ans"),
+            textRow("A·B = $ans"),
             const SizedBox(height: 20),
           ],
         );
@@ -328,7 +328,7 @@ class _VectorScalarProductState extends State<VectorScalarProduct> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("A·B = $ans"),
+            textRow("A·B = $ans"),
             const SizedBox(height: 20),
           ],
         );

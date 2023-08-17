@@ -295,7 +295,7 @@ class _VectorCrossProductState extends State<VectorCrossProduct> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("A X B : ( $c1 , $c2 , $c3 )"),
+            textRow("A X B : ( $c1 , $c2 , $c3 )"),
             const SizedBox(height: 20),
           ],
         );

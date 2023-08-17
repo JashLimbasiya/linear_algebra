@@ -124,7 +124,7 @@ class _OrthogonalVectorsState extends State<OrthogonalVectors> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("Orthogonal : $ans"),
+            textRow("Orthogonal : $ans"),
             const SizedBox(height: 20),
           ],
         );
@@ -227,7 +227,7 @@ class _OrthogonalVectorsState extends State<OrthogonalVectors> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("Orthogonal : $ans"),
+            textRow("Orthogonal : $ans"),
             const SizedBox(height: 20),
           ],
         );
@@ -342,7 +342,7 @@ class _OrthogonalVectorsState extends State<OrthogonalVectors> {
               endIndent: 5,
             ),
             const SizedBox(height: 10),
-            ansRow("Orthogonal : $ans"),
+            textRow("Orthogonal : $ans"),
             const SizedBox(height: 20),
           ],
         );
