@@ -9,15 +9,6 @@ class MatrixAddition extends StatefulWidget {
 }
 
 class _MatrixAdditionState extends State<MatrixAddition> {
-  var lists = [1, 2, 3, 4, 5];
-  int row = 2;
-  int column = 2;
-  List<List<int>> matrixA = [];
-  List<List<int>> matrixB = [];
-  // // ignore: prefer_typing_uninitialized_variables
-  // var twoDList1;
-  // // ignore: prefer_typing_uninitialized_variables
-  // var twoDList2;
 
   @override
   Widget build(BuildContext context) {
@@ -81,26 +72,101 @@ class _MatrixAdditionState extends State<MatrixAddition> {
                           onChanged: (int? newValue) {
                             setState(() {
                               column = newValue!;
-                              // twoDList1 = List.generate(row, (i) => List.generate(column, (j) => i+j));
-                              // twoDList2 = List<List>.generate(row, (i) => List<dynamic>.generate(column, (index) => null, growable: false), growable: false);
-                              // twoDList1[1][1] = "Jash";
                             });
                           },
                         ),
                       ],
                     ),
+                    const SizedBox(height: 10),
+                    textRow("Matrix A :"),
                     for (int i = 0; i < row; i++)
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           for (int j = 0; j < column; j++)
                             Column(
-                              children: [whiteTextButton("str", () {})],
+                              children: [
+                                SizedBox(
+                                  width: 75,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(5),
+                                    child: TextFormField(
+                                      textAlign: TextAlign.center,
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
+                                      ),
+                                      keyboardType: TextInputType.number,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          matrixA[i][j] =
+                                              double.parse(value);
+                                        });
+                                      },
+                                      decoration: InputDecoration(
+                                        hintText: "($i,$j)",
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             )
                         ],
                       ),
+                    const SizedBox(height: 25),
+                    textRow("Matrix B :"),
+                    for (int i = 0; i < row; i++)
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          for (int j = 0; j < column; j++)
+                            Column(
+                              children: [
+                                SizedBox(
+                                  width: 75,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(5),
+                                    child: TextFormField(
+                                      textAlign: TextAlign.center,
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
+                                      ),
+                                      keyboardType: TextInputType.number,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          matrixB[i][j] =
+                                              double.parse(value);
+                                        });
+                                      },
+                                      decoration: InputDecoration(
+                                        hintText: "($i,$j)",
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )
+                        ],
+                      ),
+                    const SizedBox(height: 25),
+                    whiteTextButton("Calculate", () {
+                      for(int i=0;i<row;i++) {
+                        for (int j = 0; j < column; j++) {
+                          matrixC[i][j] = matrixA[i][j] + matrixB[i][j];
+                        }
+                      }
+                      _MatrixAdditionState();
+                    }),
+                    const SizedBox(height: 25),
+                    const Divider(
+                      color: Color.fromARGB(70, 200, 0, 0),
+                      thickness: 3,
+                      indent: 5,
+                      endIndent: 5,
+                    ),
                     const SizedBox(height: 10),
-                    textRow("$row"),
-                    textRow("$column"),
+                    textRow("$matrixA"),
                   ],
                 ),
               )
@@ -110,4 +176,10 @@ class _MatrixAdditionState extends State<MatrixAddition> {
       ),
     );
   }
+  var lists = [1, 2, 3, 4, 5];
+  int row = 2;
+  int column = 2;
+  List<List<double>> matrixA = [[]];
+  List<List<double>> matrixB = [[]];
+  List<List<double>> matrixC = [[]];
 }
