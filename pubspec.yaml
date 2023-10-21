@@ -32,6 +32,7 @@ dependencies:
   flutter:
     sdk: flutter
   equations: ^4.1.0
+  matrix2d: ^1.0.4
 
 
   # The following adds the Cupertino Icons font to your application.
