@@ -106,11 +106,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       () {
                     Navigator.pushNamed(context, 'ls');
                   }),
-                  // cardView(
-                  //     "Matrices", 'lib/assets/images/matrices/matrices.png',
-                  //     () {
-                  //   Navigator.pushNamed(context, 'm');
-                  // }),
+                  cardView(
+                      "Matrices", 'lib/assets/images/matrices/matrices.png',
+                      () {
+                    Navigator.pushNamed(context, 'm');
+                  }),
                   cardView("Vector Spaces",
                       'lib/assets/images/vector_spaces/vector_spaces.png', () {
                     Navigator.pushNamed(context, 'vs');

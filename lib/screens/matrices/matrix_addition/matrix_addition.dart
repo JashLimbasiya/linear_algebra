@@ -9,7 +9,6 @@ class MatrixAddition extends StatefulWidget {
 }
 
 class _MatrixAdditionState extends State<MatrixAddition> {
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -49,6 +48,14 @@ class _MatrixAdditionState extends State<MatrixAddition> {
                           onChanged: (int? newValue) {
                             setState(() {
                               row = newValue!;
+                              matrixA = List.generate(
+                                  row, (i) => List.generate(column, (j) => 0));
+                              matrixB = List.generate(
+                                  row, (i) => List.generate(column, (j) => 0));
+                              matrixC = List.generate(
+                                  row,
+                                  (i) => List.generate(column,
+                                      (j) => matrixA[i][j] + matrixB[i][j]));
                             });
                           },
                         ),
@@ -72,6 +79,14 @@ class _MatrixAdditionState extends State<MatrixAddition> {
                           onChanged: (int? newValue) {
                             setState(() {
                               column = newValue!;
+                              matrixA = List.generate(
+                                  row, (i) => List.generate(column, (j) => 0));
+                              matrixB = List.generate(
+                                  row, (i) => List.generate(column, (j) => 0));
+                              matrixC = List.generate(
+                                  row,
+                                  (i) => List.generate(column,
+                                      (j) => matrixA[i][j] + matrixB[i][j]));
                             });
                           },
                         ),
@@ -99,8 +114,7 @@ class _MatrixAdditionState extends State<MatrixAddition> {
                                       keyboardType: TextInputType.number,
                                       onChanged: (value) {
                                         setState(() {
-                                          matrixA[i][j] =
-                                              double.parse(value);
+                                          matrixA[i][j] = double.parse(value);
                                         });
                                       },
                                       decoration: InputDecoration(
@@ -135,8 +149,7 @@ class _MatrixAdditionState extends State<MatrixAddition> {
                                       keyboardType: TextInputType.number,
                                       onChanged: (value) {
                                         setState(() {
-                                          matrixB[i][j] =
-                                              double.parse(value);
+                                          matrixB[i][j] = double.parse(value);
                                         });
                                       },
                                       decoration: InputDecoration(
@@ -151,11 +164,15 @@ class _MatrixAdditionState extends State<MatrixAddition> {
                       ),
                     const SizedBox(height: 25),
                     whiteTextButton("Calculate", () {
-                      for(int i=0;i<row;i++) {
-                        for (int j = 0; j < column; j++) {
-                          matrixC[i][j] = matrixA[i][j] + matrixB[i][j];
-                        }
-                      }
+                      matrixC = List.generate(
+                          row,
+                          (i) => List.generate(
+                              column, (j) => matrixA[i][j] + matrixB[i][j]));
+                      // for (int i = 0; i < row; i++) {
+                      //   for (int j = 0; j < column; j++) {
+                      //     matrixC[i][j] = matrixA[i][j] + matrixB[i][j];
+                      //   }
+                      // }
                       _MatrixAdditionState();
                     }),
                     const SizedBox(height: 25),
@@ -166,7 +183,7 @@ class _MatrixAdditionState extends State<MatrixAddition> {
                       endIndent: 5,
                     ),
                     const SizedBox(height: 10),
-                    textRow("$matrixA"),
+                    textRow(matrixC[0].toString()),
                   ],
                 ),
               )
@@ -176,6 +193,7 @@ class _MatrixAdditionState extends State<MatrixAddition> {
       ),
     );
   }
+
   var lists = [1, 2, 3, 4, 5];
   int row = 2;
   int column = 2;
