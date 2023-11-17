@@ -234,7 +234,7 @@ class _MatrixMultiplicationState extends State<MatrixMultiplication> {
                       endIndent: 5,
                     ),
                     const SizedBox(height: 10),
-                    textRow("Matrix AxB :"),
+                    textRow("Matrix A·B :"),
                     for (int x = 0; x < row; x++)
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
