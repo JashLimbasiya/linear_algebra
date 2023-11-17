@@ -53,9 +53,7 @@ class _MatrixAdditionState extends State<MatrixAddition> {
                               matrixB = List.generate(
                                   row, (i) => List.generate(column, (j) => 0));
                               matrixC = List.generate(
-                                  row,
-                                  (i) => List.generate(column,
-                                      (j) => matrixA[i][j] + matrixB[i][j]));
+                                  row, (i) => List.generate(column, (j) => 0));
                             });
                           },
                         ),
@@ -84,9 +82,7 @@ class _MatrixAdditionState extends State<MatrixAddition> {
                               matrixB = List.generate(
                                   row, (i) => List.generate(column, (j) => 0));
                               matrixC = List.generate(
-                                  row,
-                                  (i) => List.generate(column,
-                                      (j) => matrixA[i][j] + matrixB[i][j]));
+                                  row, (i) => List.generate(column, (j) => 0));
                             });
                           },
                         ),
@@ -164,16 +160,13 @@ class _MatrixAdditionState extends State<MatrixAddition> {
                       ),
                     const SizedBox(height: 25),
                     whiteTextButton("Calculate", () {
-                      matrixC = List.generate(
-                          row,
-                          (i) => List.generate(
-                              column, (j) => matrixA[i][j] + matrixB[i][j]));
-                      // for (int i = 0; i < row; i++) {
-                      //   for (int j = 0; j < column; j++) {
-                      //     matrixC[i][j] = matrixA[i][j] + matrixB[i][j];
-                      //   }
-                      // }
-                      _MatrixAdditionState();
+                      setState(() {
+                        for (int i = 0; i < row; i++) {
+                          for (int j = 0; j < column; j++) {
+                            matrixC[i][j] = matrixA[i][j] + matrixB[i][j];
+                          }
+                        }
+                      });
                     }),
                     const SizedBox(height: 25),
                     const Divider(
@@ -183,7 +176,23 @@ class _MatrixAdditionState extends State<MatrixAddition> {
                       endIndent: 5,
                     ),
                     const SizedBox(height: 10),
-                    textRow(matrixC[0].toString()),
+                    textRow("Matrix A+B :"),
+                    for (int x = 0; x < row; x++)
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text("|\t\t", style: TextStyle(fontSize: 20)),
+                          for (int y = 0; y < column; y++)
+                            Column(
+                              children: [
+                                Text("${matrixC[x][y]}\t\t",
+                                    style: const TextStyle(fontSize: 20)),
+                              ],
+                            ),
+                          const Text("|", style: TextStyle(fontSize: 20)),
+                        ],
+                      ),
+                    const SizedBox(height: 20),
                   ],
                 ),
               )
@@ -197,7 +206,10 @@ class _MatrixAdditionState extends State<MatrixAddition> {
   var lists = [1, 2, 3, 4, 5];
   int row = 2;
   int column = 2;
-  List<List<double>> matrixA = [[]];
-  List<List<double>> matrixB = [[]];
-  List<List<double>> matrixC = [[]];
+  List<List<double>> matrixA =
+      List.generate(2, (i) => List.generate(2, (j) => 0));
+  List<List<double>> matrixB =
+      List.generate(2, (i) => List.generate(2, (j) => 0));
+  List<List<double>> matrixC =
+      List.generate(2, (i) => List.generate(2, (j) => 0));
 }
