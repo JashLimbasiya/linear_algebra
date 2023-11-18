@@ -78,11 +78,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.pushNamed(context, value.toString());
                 }, itemBuilder: (BuildContext bc) {
                   return [
-                    PopupItem("Check for Updates", "/splash_screen"),
+                    PopupItem("Check for Updates", ""),
                     PopupItem("Feedback", "f"),
-                    PopupItem("Share", "/splash_screen"),
-                    PopupItem("Other Apps", "/splash_screen"),
-                    PopupItem("About Us", "/splash_screen")
+                    PopupItem("Other Apps", ""),
+                    PopupItem("About Us", "")
                   ];
                 })
               ],
@@ -96,15 +95,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSpacing: 10,
                 crossAxisCount: 2,
                 children: <Widget>[
+                  cardView("Calculator", 'lib/assets/images/calculator.png',
+                      () {
+                    Navigator.pushNamed(context, 'calculator');
+                  }),
                   cardView(
                       "Geometry", 'lib/assets/images/geometry/geometry.png',
                       () {
                     Navigator.pushNamed(context, 'g');
-                  }),
-                  cardView("Linear Systems",
-                      'lib/assets/images/linear_system/linear_equation.png',
-                      () {
-                    Navigator.pushNamed(context, 'ls');
                   }),
                   cardView(
                       "Matrices", 'lib/assets/images/matrices/matrices.png',
@@ -114,6 +112,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   cardView("Vector Spaces",
                       'lib/assets/images/vector_spaces/vector_spaces.png', () {
                     Navigator.pushNamed(context, 'vs');
+                  }),
+                  cardView("Linear Systems",
+                      'lib/assets/images/linear_system/linear_equation.png',
+                      () {
+                    Navigator.pushNamed(context, 'ls');
                   }),
                 ],
               ),

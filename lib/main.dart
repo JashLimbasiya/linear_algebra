@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:linear_algebra/screens/calculator/calculator.dart';
 import 'package:linear_algebra/screens/feedback.dart';
 import 'package:linear_algebra/screens/geometry/circle/circle.dart';
 import 'package:linear_algebra/screens/geometry/cone/cone.dart';
@@ -93,6 +94,7 @@ class _MyAppState extends State<MyApp> {
         'angle': (context) => const Angle(),
         'projection': (context) => const Projection(),
         'orthogonal_vectors': (context) => const OrthogonalVectors(),
+        'calculator': (context) => const Calculator(),
       },
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
