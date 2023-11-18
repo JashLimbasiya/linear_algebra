@@ -139,8 +139,8 @@ class _CalculatorState extends State<Calculator> {
                             buttontapped: () {
                               setState(() {
                                 if (isOperator(userInput.substring(
-                                    userInput.length - 1,
-                                    userInput.length)) ==
+                                        userInput.length - 1,
+                                        userInput.length)) ==
                                     true) {
                                   userInput = userInput.substring(
                                       0, userInput.length - 1);
@@ -172,6 +172,26 @@ class _CalculatorState extends State<Calculator> {
                             },
                             buttonText: buttons[index],
                             color: Colors.red[50],
+                            textColor: Colors.black,
+                          );
+                        }
+                        // . Button
+                        else if (index == 17) {
+                          return MyButton(
+                            buttontapped: () {
+                              setState(() {
+                                if (isOperator(userInput.substring(
+                                    userInput.length - 1,
+                                    userInput.length)) ==
+                                    true) {
+                                  userInput = userInput.substring(
+                                      0, userInput.length - 1);
+                                }
+                                userInput += '.';
+                              });
+                            },
+                            buttonText: buttons[index],
+                            color: Colors.white,
                             textColor: Colors.black,
                           );
                         }
@@ -227,7 +247,13 @@ class _CalculatorState extends State<Calculator> {
   }
 
   bool isOperator(String x) {
-    if (x == '/' || x == 'x' || x == '-' || x == '+' || x == '=' || x == '%' || x == '.') {
+    if (x == '/' ||
+        x == 'x' ||
+        x == '-' ||
+        x == '+' ||
+        x == '=' ||
+        x == '%' ||
+        x == '.') {
       return true;
     }
     return false;
@@ -242,6 +268,10 @@ class _CalculatorState extends State<Calculator> {
     Expression exp = p.parse(finaluserinput);
     ContextModel cm = ContextModel();
     double eval = exp.evaluate(EvaluationType.REAL, cm);
-    answer = eval.toString();
+    if ((eval - eval.round()) == 0) {
+      answer = eval.round().toString();
+    } else {
+      answer = eval.toString();
+    }
   }
 }
